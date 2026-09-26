@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>403 — Akses Dilarang</title>
+
+  <script>
+    (function () {
+      try {
+        var d = document.documentElement;
+        var t = localStorage.getItem('xa:theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        d.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+        var acc = localStorage.getItem('xa:accent');
+        if (acc) d.setAttribute('data-xa-accent', acc);
+        var rad = localStorage.getItem('xa:radius');
+        if (rad) d.setAttribute('data-xa-radius', rad);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preload" href="../../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/css/app.min.css">
+</head>
+<body class="bg-body-tertiary d-flex align-items-center justify-content-center min-vh-100 p-3 position-relative">
+  <div class="position-absolute top-0 end-0 p-3">
+    <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Ganti Tema">
+      <svg class="xa-icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#sun"/></svg>
+    </button>
+  </div>
+
+  <div class="text-center" style="max-width: 28rem;">
+    <div class="display-1 fw-bold text-muted opacity-50 mb-2">403</div>
+    <h1 class="h3 fw-bold mb-2">Akses Dilarang</h1>
+    <p class="text-muted small mb-4">
+      Anda tidak memiliki izin akses (otorisasi) yang diperlukan untuk membuka halaman ini.
+    </p>
+    <div class="d-flex justify-content-center gap-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm" onclick="history.back()">
+        <svg class="xa-icon me-1" aria-hidden="true"><use href="../../assets/icons/sprite.svg#chevron-left"/></svg>
+        Kembali
+      </button>
+      <a href="../../index.html" class="btn btn-primary btn-sm">
+        <svg class="xa-icon me-1" aria-hidden="true"><use href="../../assets/icons/sprite.svg#layout-dashboard"/></svg>
+        Ke Dashboard
+      </a>
+    </div>
+  </div>
+
+  <script src="../../assets/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="../../assets/js/app.bundle.js" defer></script>
+</body>
+</html>

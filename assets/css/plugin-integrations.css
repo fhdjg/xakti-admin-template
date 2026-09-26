@@ -1,0 +1,110 @@
+/* Plugin integrations — Bootstrap-compatible visual bridge.
+   These selectors intentionally target the public markup emitted by each plugin,
+   so applications can add the plugin assets without changing their HTML API. */
+
+/* DataTables + Bootstrap 5 */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+  color: var(--muted-foreground);
+  font-size: .8125rem;
+}
+
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper select.form-select,
+.dataTables_wrapper input.form-control {
+  min-height: 2.25rem;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  background-color: var(--background);
+  color: var(--foreground);
+  box-shadow: var(--shadow-xs);
+}
+
+.dataTables_wrapper .dataTables_filter input { margin-left: .5rem; }
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: .25rem .625rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--foreground);
+  background: transparent;
+  cursor: pointer;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  border-color: var(--primary);
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* Summernote */
+.note-editor.note-frame,
+.note-editor.note-airframe {
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+}
+.note-toolbar { border-bottom: 1px solid var(--border); background: var(--muted); }
+.note-btn {
+  border-color: transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--foreground);
+}
+.note-btn:hover, .note-btn:focus-visible { border-color: var(--border); background: var(--accent); color: var(--accent-foreground); }
+.note-editable { min-height: 12rem; color: var(--foreground); background: var(--background); }
+.note-statusbar { border-top: 1px solid var(--border); background: var(--muted); }
+
+/* Select2 */
+/* Select2 writes an inline width; this override keeps responsive form layouts intact. */
+.select2-container { width: 100% !important; }
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  min-height: 2.25rem;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  background-color: var(--background);
+  color: var(--foreground);
+  box-shadow: var(--shadow-xs);
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--open .select2-selection--single,
+.select2-container--default .select2-selection--single:focus {
+  border-color: var(--ring);
+  outline: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 50%, transparent);
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding: .5rem .75rem;
+  line-height: 1.25rem;
+  color: var(--foreground);
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow { height: 100%; }
+.select2-dropdown {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--popover);
+  color: var(--popover-foreground);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.select2-container--default .select2-results__option { padding: .5rem .75rem; }
+.select2-container--default .select2-results__option--highlighted[aria-selected] { background: var(--accent); color: var(--accent-foreground); }
+.select2-container--default .select2-results__option[aria-selected="true"] { background: var(--muted); color: var(--foreground); }
+.select2-search--dropdown .select2-search__field { border: 1px solid var(--input); border-radius: var(--radius-sm); background: var(--background); color: var(--foreground); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dataTables_wrapper *, .note-editor *, .select2-container * { transition-duration: .01ms; }
+}

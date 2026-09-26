@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengaturan — Xakti Admin</title>
+
+  <script>
+    (function () {
+      try {
+        var d = document.documentElement;
+        var t = localStorage.getItem('xa:theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        d.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+
+        var sm = localStorage.getItem('xa:sidebar-mode') || 'follow';
+        d.setAttribute('data-xa-sidebar-mode', sm);
+
+        var st = JSON.parse(localStorage.getItem('xa:sidebar-theme') || 'null');
+        if (sm === 'follow' && (!st || !st.vars)) {
+          d.setAttribute('data-xa-sidebar-theme', dark ? 'dark' : 'light');
+        } else {
+          if (st && st.preset) d.setAttribute('data-xa-sidebar-theme', st.preset);
+          if (st && st.vars) {
+            for (var k in st.vars) d.style.setProperty(k, st.vars[k]);
+          }
+        }
+
+        d.setAttribute('data-xa-sidebar-state', localStorage.getItem('xa:sidebar-state') || 'expanded');
+        var acc = localStorage.getItem('xa:accent');
+        if (acc) d.setAttribute('data-xa-accent', acc);
+        var rad = localStorage.getItem('xa:radius');
+        if (rad) d.setAttribute('data-xa-radius', rad);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preload" href="../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/app.min.css">
+</head>
+<body>
+  <a class="xa-skip-link" href="#main">Lewati ke konten</a>
+
+  <div class="xa-shell">
+    <aside class="xa-sidebar offcanvas-lg offcanvas-start" id="xaSidebar" tabindex="-1" aria-label="Sidebar Navigasi" data-xa-sidebar>
+      <div class="xa-sidebar__header">
+        <a class="xa-sidebar__brand" href="../index.html">
+          <div class="xa-sidebar__brand-icon">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sparkles"/></svg>
+          </div>
+          <span class="xa-sidebar__brand-text">Xakti Admin</span>
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#xaSidebar" aria-label="Tutup"></button>
+      </div>
+
+      <nav class="xa-sidebar__nav" aria-label="Navigasi Utama">
+        <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Utama</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#layout-dashboard"/></svg>
+                <span class="xa-sidebar__text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data-table.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#table"/></svg>
+                <span class="xa-sidebar__text">Data Table</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forms.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file-text"/></svg>
+                <span class="xa-sidebar__text">Formulir</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../project-structure.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#folder"/></svg>
+                <span class="xa-sidebar__text">Struktur Project</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+<div class="xa-sidebar__section" data-xa-plugin-menu>
+          <p class="xa-sidebar__label">Plugin UI</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuPlugins" aria-expanded="false" aria-controls="menuPlugins">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#blocks"/></svg>
+                <span class="xa-sidebar__text">Plugin UI</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuPlugins">
+                <li class="nav-item"><a class="nav-link" href="plugin-examples.html">Contoh penggunaan</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+                <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Tampilan & Komponen</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="components.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#blocks"/></svg>
+                <span class="xa-sidebar__text">Komponen (UI)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="settings.html" aria-current="page">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg>
+                <span class="xa-sidebar__text">Pengaturan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg>
+                <span class="xa-sidebar__text">Profil Saya</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="xa-sidebar__section">
+          <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Bantuan</p>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="../documentation.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file-text"/></svg><span class="xa-sidebar__text">Dokumentasi</span></a></li>
+          </ul>
+        </div>
+
+        <p class="xa-sidebar__label">Halaman Lainnya</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuAuth" aria-expanded="false" aria-controls="menuAuth">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#lock"/></svg>
+                <span class="xa-sidebar__text">Autentikasi</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuAuth">
+                <li class="nav-item">
+                  <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuLogin" aria-expanded="false" aria-controls="menuLogin">
+                    <span class="xa-sidebar__text">Masuk (Login)</span>
+                    <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+                  </button>
+                  <ul class="nav flex-column collapse" id="menuLogin">
+                    <li class="nav-item"><a class="nav-link" href="auth/login.html">Dengan Email</a></li>
+                    <li class="nav-item"><a class="nav-link" href="auth/login.html#otp">Dengan OTP</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="auth/register.html">Daftar (Register)</a></li>
+                <li class="nav-item"><a class="nav-link" href="auth/forgot-password.html">Lupa Kata Sandi</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuErrors" aria-expanded="false" aria-controls="menuErrors">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#shield-alert"/></svg>
+                <span class="xa-sidebar__text">Halaman Error</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuErrors">
+                <li class="nav-item"><a class="nav-link" href="errors/403.html">403 Dilarang</a></li>
+                <li class="nav-item"><a class="nav-link" href="errors/404.html">404 Tidak Ditemukan</a></li>
+                <li class="nav-item"><a class="nav-link" href="errors/500.html">500 Server Error</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blank.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file"/></svg>
+                <span class="xa-sidebar__text">Blank Starter</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="xa-sidebar__footer">
+        <div class="dropdown w-100">
+          <button class="btn btn-ghost w-100 d-flex align-items-center gap-2 p-1 text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="xa-avatar xa-avatar--sm">JD</div>
+            <div class="xa-sidebar__user-info overflow-hidden flex-fill">
+              <div class="fw-semibold text-truncate small">John Doe</div>
+              <div class="text-muted text-truncate">admin@xakti.id</div>
+            </div>
+            <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevrons-up-down"/></svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li><a class="dropdown-item" href="profile.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg> Profil</a></li>
+            <li><a class="dropdown-item" href="settings.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg> Pengaturan</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#log-out"/></svg> Keluar</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <div class="xa-shell__body">
+      <header class="navbar xa-topbar">
+        <div class="xa-topbar__left">
+          <button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle aria-label="Buka Sidebar">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg>
+          </button>
+          <button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle aria-label="Lipat Sidebar (Ctrl+B)">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#panel-left"/></svg>
+          </button>
+          <nav aria-label="Breadcrumb" class="d-none d-sm-block">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.html">Aplikasi</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Pengaturan</li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="xa-topbar__right">
+          <button class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex align-items-center gap-2 text-muted" type="button" data-xa-command-open aria-label="Cari Cepat">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#search"/></svg>
+            <span>Cari apa saja...</span>
+            <kbd class="badge bg-secondary-subtle text-secondary-emphasis border">Ctrl K</kbd>
+          </button>
+          <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Ganti Tema">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+          </button>
+          <button class="btn btn-ghost btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#xaCustomizer" aria-label="Kustomisasi Tema">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#palette"/></svg>
+          </button>
+          <div class="dropdown">
+            <button class="btn btn-ghost p-0 rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menu Akun">
+              <div class="xa-avatar xa-avatar--sm">JD</div>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><h6 class="dropdown-header">John Doe</h6></li>
+              <li><a class="dropdown-item" href="profile.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg> Profil</a></li>
+              <li><a class="dropdown-item" href="settings.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg> Pengaturan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#log-out"/></svg> Keluar</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main id="main" class="xa-content" tabindex="-1">
+        <div class="xa-page-header">
+          <div>
+            <h1 class="xa-page-title">Pengaturan Sistem</h1>
+            <p class="xa-page-description">Kelola profil organisasi, preferensi tampilan, dan keamanan sistem.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Sidebar Nav Pengaturan -->
+          <div class="col-12 col-md-3">
+            <div class="list-group">
+              <a href="#tabProfile" class="list-group-item list-group-item-action active" data-bs-toggle="list">Profil & Akun</a>
+              <a href="#tabAppearance" class="list-group-item list-group-item-action" data-bs-toggle="list">Tampilan & Tema</a>
+              <a href="#tabNotifications" class="list-group-item list-group-item-action" data-bs-toggle="list">Notifikasi</a>
+              <a href="#tabSecurity" class="list-group-item list-group-item-action" data-bs-toggle="list">Keamanan & 2FA</a>
+            </div>
+          </div>
+
+          <!-- Konten Pengaturan -->
+          <div class="col-12 col-md-9">
+            <div class="tab-content">
+              <!-- Tab 1: Profil -->
+              <div class="tab-pane fade show active" id="tabProfile">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="card-title h6 mb-0">Informasi Akun</h2>
+                    <p class="card-subtitle small text-muted">Perbarui data profil publik dan informasi kontak Anda</p>
+                  </div>
+                  <div class="card-body">
+                    <form onsubmit="event.preventDefault(); XaktiAdmin.toast.show({title: 'Disimpan', message: 'Profil akun berhasil diperbarui.', variant: 'success'});">
+                      <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="xa-avatar xa-avatar--lg">JD</div>
+                        <div>
+                          <button type="button" class="btn btn-outline-secondary btn-sm me-2">Ganti Avatar</button>
+                          <button type="button" class="btn btn-ghost btn-sm text-danger">Hapus</button>
+                          <div class="text-muted small mt-1">Disarankan gambar persegi format PNG/JPG minimal 200x200px.</div>
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="settingsName" class="form-label">Nama Tampilan</label>
+                        <input type="text" class="form-control" id="settingsName" value="John Doe">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="settingsEmail" class="form-label">Email Utama</label>
+                        <input type="email" class="form-control" id="settingsEmail" value="admin@xakti.id">
+                      </div>
+
+                      <div class="mb-4">
+                        <label for="settingsBio" class="form-label">Bio Singkat</label>
+                        <textarea class="form-control" id="settingsBio" rows="3">Lead System Administrator di Xakti Tech.</textarea>
+                      </div>
+
+                      <button type="submit" class="btn btn-primary btn-sm">Simpan Perubahan</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 2: Tampilan -->
+              <div class="tab-pane fade" id="tabAppearance">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="card-title h6 mb-0">Preferensi Antarmuka</h2>
+                    <p class="card-subtitle small text-muted">Sesuaikan nuansa visual dashboard</p>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-4">
+                      <label class="form-label fw-semibold">Mode Warna Tema</label>
+                      <div class="d-flex gap-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="themeModeRadio" id="modeLight" onclick="XaktiAdmin.theme.set('light')" checked>
+                          <label class="form-check-label" for="modeLight">Terang (Light)</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="themeModeRadio" id="modeDark" onclick="XaktiAdmin.theme.set('dark')">
+                          <label class="form-check-label" for="modeDark">Gelap (Dark)</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="themeModeRadio" id="modeSystem" onclick="XaktiAdmin.theme.set('system')">
+                          <label class="form-check-label" for="modeSystem">Ikuti Sistem</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="form-label fw-semibold">Buka Panel Customizer</label>
+                      <p class="small text-muted mb-2">Gunakan Theme Customizer di pojok kanan atas untuk mengganti preset warna sidebar dan radius sudut secara langsung.</p>
+                      <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#xaCustomizer">
+                        <svg class="xa-icon me-1" aria-hidden="true"><use href="../assets/icons/sprite.svg#palette"/></svg>
+                        Buka Theme Customizer
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 3: Notifikasi -->
+              <div class="tab-pane fade" id="tabNotifications">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="card-title h6 mb-0">Preferensi Notifikasi</h2>
+                    <p class="card-subtitle small text-muted">Pilih jenis informasi yang ingin Anda terima</p>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-check form-switch mb-3">
+                      <input class="form-check-input" type="checkbox" role="switch" id="notifEmail" checked>
+                      <label class="form-check-label" for="notifEmail">
+                        <div class="fw-semibold">Email Transaksi</div>
+                        <div class="text-muted small">Terima salinan bukti setiap pembayaran sukses.</div>
+                      </label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                      <input class="form-check-input" type="checkbox" role="switch" id="notifSecurity" checked>
+                      <label class="form-check-label" for="notifSecurity">
+                        <div class="fw-semibold">Peringatan Keamanan</div>
+                        <div class="text-muted small">Notifikasi saat ada login dari perangkat atau IP baru.</div>
+                      </label>
+                    </div>
+                    <div class="form-check form-switch mb-0">
+                      <input class="form-check-input" type="checkbox" role="switch" id="notifPromo">
+                      <label class="form-check-label" for="notifPromo">
+                        <div class="fw-semibold">Newsletter & Pembaruan Fitur</div>
+                        <div class="text-muted small">Info seputar fitur baru dan tips berkala.</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 4: Keamanan -->
+              <div class="tab-pane fade" id="tabSecurity">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="card-title h6 mb-0">Ubah Kata Sandi</h2>
+                    <p class="card-subtitle small text-muted">Pastikan kata sandi Anda kuat dan tidak digunakan di situs lain</p>
+                  </div>
+                  <div class="card-body">
+                    <form onsubmit="event.preventDefault(); XaktiAdmin.toast.show({title: 'Berhasil', message: 'Kata sandi berhasil diubah.', variant: 'success'});">
+                      <div class="mb-3">
+                        <label for="oldPass" class="form-label">Kata Sandi Saat Ini</label>
+                        <input type="password" class="form-control" id="oldPass" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="newPass" class="form-label">Kata Sandi Baru</label>
+                        <input type="password" class="form-control" id="newPass" required>
+                      </div>
+                      <div class="mb-4">
+                        <label for="confirmPass" class="form-label">Konfirmasi Kata Sandi Baru</label>
+                        <input type="password" class="form-control" id="confirmPass" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-sm">Perbarui Kata Sandi</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="mt-auto py-3 px-4 border-top text-center text-muted small">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+          <span>&copy; 2026 <strong>Xakti Admin</strong>. Dibuat dengan Bootstrap 5 & gaya shadcn.</span>
+          <div class="d-flex gap-3">
+            <a href="../documentation.html" class="text-muted text-decoration-none">Panduan</a>
+            <a href="components.html" class="text-muted text-decoration-none">Komponen</a>
+            <a href="blank.html" class="text-muted text-decoration-none">Starter</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Customizer -->
+  <div class="offcanvas offcanvas-end xa-customizer" id="xaCustomizer" tabindex="-1" aria-labelledby="xaCustomizerTitle">
+    <div class="offcanvas-header">
+      <div>
+        <h5 class="offcanvas-title fw-semibold" id="xaCustomizerTitle">Kustomisasi Tema</h5>
+        <p class="text-muted small mb-0">Ubah gaya, warna sidebar, dan aksen</p>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="xa-customizer__section">
+        <div class="xa-customizer__section-title">Mode Tampilan</div>
+        <div class="btn-group w-100" role="group">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="light" data-xa-theme-value="light">Terang</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="dark" data-xa-theme-value="dark">Gelap</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="system" data-xa-theme-value="system">Sistem</button>
+        </div>
+      </div>
+      <div class="xa-customizer__section">
+        <div class="xa-customizer__section-title">Mode Sidebar</div>
+        <div class="btn-group w-100" role="group">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="follow" data-xa-sidebar-mode-value="follow">Ikuti Tema</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="light" data-xa-sidebar-mode-value="light">Terang</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="dark" data-xa-sidebar-mode-value="dark">Gelap</button>
+        </div>
+      </div>
+      <div class="xa-customizer__section">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="xa-customizer__section-title mb-0">Preset Sidebar</span>
+          <span class="badge text-bg-secondary">10 Pilihan</span>
+        </div>
+        <div class="xa-swatches-grid">
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="light"><span class="xa-swatch-circle" style="background-color: #fafafa;"></span> Light</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="dark"><span class="xa-swatch-circle" style="background-color: #09090b;"></span> Dark</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="zinc"><span class="xa-swatch-circle" style="background-color: #18181b;"></span> Zinc</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="slate"><span class="xa-swatch-circle" style="background-color: #0f172a;"></span> Slate</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="blue"><span class="xa-swatch-circle" style="background-color: #172554;"></span> Blue</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="indigo"><span class="xa-swatch-circle" style="background-color: #1e1b4b;"></span> Indigo</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="violet"><span class="xa-swatch-circle" style="background-color: #2e1065;"></span> Violet</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="emerald"><span class="xa-swatch-circle" style="background-color: #064e3b;"></span> Emerald</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="rose"><span class="xa-swatch-circle" style="background-color: #4c0519;"></span> Rose</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="amber"><span class="xa-swatch-circle" style="background-color: #451a03;"></span> Amber</button>
+        </div>
+      </div>
+      <div class="xa-customizer__section"><div class="xa-customizer__section-title">Warna Kustom Sidebar</div><div class="xa-custom-color-picker"><input type="color" class="xa-color-input" id="xaColorPickerSettings" data-xa-sidebar-picker value="#0f172a" aria-label="Pilih warna kustom sidebar"><label for="xaColorPickerSettings" class="small text-muted mb-0">Pilih warna bebas (auto-contrast teks otomatis dihitung)</label></div></div>
+      <div class="xa-customizer__section"><div class="xa-customizer__section-title">Warna Aksen Global</div><div class="d-flex flex-wrap gap-2"><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="zinc">Zinc</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="blue">Blue</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="green">Green</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="orange">Orange</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="rose">Rose</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="violet">Violet</button></div></div>
+      <div class="xa-customizer__section"><div class="xa-customizer__section-title">Radius Sudut</div><div class="btn-group w-100" role="group" aria-label="Radius"><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0">0</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.3">0.3</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.5">0.5</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.75">0.75</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="1">1.0</button></div></div>
+      <div class="xa-customizer__section d-flex gap-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" data-xa-reset-customizer>Reset Default</button>
+        <button type="button" class="btn btn-primary btn-sm flex-fill" data-xa-export-theme>Salin JSON</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/app.bundle.js" defer></script>
+</body>
+</html>

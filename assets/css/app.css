@@ -1,0 +1,10 @@
+/* ==========================================================================
+   App Entry CSS — Xakti Admin
+   Load order: tokens.css -> theme.css -> layout.css -> components.css
+   ========================================================================== */
+
+@import url('tokens.css');
+@import url('theme.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('plugin-integrations.css');

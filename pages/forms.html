@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulir — Xakti Admin</title>
+
+  <script>
+    (function () {
+      try {
+        var d = document.documentElement;
+        var t = localStorage.getItem('xa:theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        d.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+
+        var sm = localStorage.getItem('xa:sidebar-mode') || 'follow';
+        d.setAttribute('data-xa-sidebar-mode', sm);
+
+        var st = JSON.parse(localStorage.getItem('xa:sidebar-theme') || 'null');
+        if (sm === 'follow' && (!st || !st.vars)) {
+          d.setAttribute('data-xa-sidebar-theme', dark ? 'dark' : 'light');
+        } else {
+          if (st && st.preset) d.setAttribute('data-xa-sidebar-theme', st.preset);
+          if (st && st.vars) {
+            for (var k in st.vars) d.style.setProperty(k, st.vars[k]);
+          }
+        }
+
+        d.setAttribute('data-xa-sidebar-state', localStorage.getItem('xa:sidebar-state') || 'expanded');
+        var acc = localStorage.getItem('xa:accent');
+        if (acc) d.setAttribute('data-xa-accent', acc);
+        var rad = localStorage.getItem('xa:radius');
+        if (rad) d.setAttribute('data-xa-radius', rad);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preload" href="../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/app.min.css">
+</head>
+<body>
+  <a class="xa-skip-link" href="#main">Lewati ke konten</a>
+
+  <div class="xa-shell">
+    <!-- Sidebar -->
+    <aside class="xa-sidebar offcanvas-lg offcanvas-start" id="xaSidebar" tabindex="-1" aria-label="Sidebar Navigasi" data-xa-sidebar>
+      <div class="xa-sidebar__header">
+        <a class="xa-sidebar__brand" href="../index.html">
+          <div class="xa-sidebar__brand-icon">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sparkles"/></svg>
+          </div>
+          <span class="xa-sidebar__brand-text">Xakti Admin</span>
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#xaSidebar" aria-label="Tutup"></button>
+      </div>
+
+      <nav class="xa-sidebar__nav" aria-label="Navigasi Utama">
+        <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Utama</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#layout-dashboard"/></svg>
+                <span class="xa-sidebar__text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data-table.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#table"/></svg>
+                <span class="xa-sidebar__text">Data Table</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="forms.html" aria-current="page">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file-text"/></svg>
+                <span class="xa-sidebar__text">Formulir</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../project-structure.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#folder"/></svg>
+                <span class="xa-sidebar__text">Struktur Project</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+<div class="xa-sidebar__section" data-xa-plugin-menu>
+          <p class="xa-sidebar__label">Plugin UI</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuPlugins" aria-expanded="false" aria-controls="menuPlugins">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#blocks"/></svg>
+                <span class="xa-sidebar__text">Plugin UI</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuPlugins">
+                <li class="nav-item"><a class="nav-link" href="plugin-examples.html">Contoh penggunaan</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+                <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Tampilan & Komponen</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="components.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#blocks"/></svg>
+                <span class="xa-sidebar__text">Komponen (UI)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="settings.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg>
+                <span class="xa-sidebar__text">Pengaturan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg>
+                <span class="xa-sidebar__text">Profil Saya</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="xa-sidebar__section">
+          <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Bantuan</p>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="../documentation.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file-text"/></svg><span class="xa-sidebar__text">Dokumentasi</span></a></li>
+          </ul>
+        </div>
+
+        <p class="xa-sidebar__label">Halaman Lainnya</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuAuth" aria-expanded="false" aria-controls="menuAuth">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#lock"/></svg>
+                <span class="xa-sidebar__text">Autentikasi</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuAuth">
+                <li class="nav-item">
+                  <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuLogin" aria-expanded="false" aria-controls="menuLogin">
+                    <span class="xa-sidebar__text">Masuk (Login)</span>
+                    <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+                  </button>
+                  <ul class="nav flex-column collapse" id="menuLogin">
+                    <li class="nav-item"><a class="nav-link" href="auth/login.html">Dengan Email</a></li>
+                    <li class="nav-item"><a class="nav-link" href="auth/login.html#otp">Dengan OTP</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="auth/register.html">Daftar (Register)</a></li>
+                <li class="nav-item"><a class="nav-link" href="auth/forgot-password.html">Lupa Kata Sandi</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuErrors" aria-expanded="false" aria-controls="menuErrors">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#shield-alert"/></svg>
+                <span class="xa-sidebar__text">Halaman Error</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuErrors">
+                <li class="nav-item"><a class="nav-link" href="errors/403.html">403 Dilarang</a></li>
+                <li class="nav-item"><a class="nav-link" href="errors/404.html">404 Tidak Ditemukan</a></li>
+                <li class="nav-item"><a class="nav-link" href="errors/500.html">500 Server Error</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="blank.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file"/></svg>
+                <span class="xa-sidebar__text">Blank Starter</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="xa-sidebar__footer">
+        <div class="dropdown w-100">
+          <button class="btn btn-ghost w-100 d-flex align-items-center gap-2 p-1 text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="xa-avatar xa-avatar--sm">JD</div>
+            <div class="xa-sidebar__user-info overflow-hidden flex-fill">
+              <div class="fw-semibold text-truncate small">John Doe</div>
+              <div class="text-muted text-truncate">admin@xakti.id</div>
+            </div>
+            <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevrons-up-down"/></svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li><a class="dropdown-item" href="profile.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg> Profil</a></li>
+            <li><a class="dropdown-item" href="settings.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg> Pengaturan</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#log-out"/></svg> Keluar</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <div class="xa-shell__body">
+      <!-- Topbar -->
+      <header class="navbar xa-topbar">
+        <div class="xa-topbar__left">
+          <button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle aria-label="Buka Sidebar">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg>
+          </button>
+          <button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle aria-label="Lipat Sidebar (Ctrl+B)">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#panel-left"/></svg>
+          </button>
+          <nav aria-label="Breadcrumb" class="d-none d-sm-block">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.html">Aplikasi</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Formulir</li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="xa-topbar__right">
+          <button class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex align-items-center gap-2 text-muted" type="button" data-xa-command-open aria-label="Cari Cepat">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#search"/></svg>
+            <span>Cari apa saja...</span>
+            <kbd class="badge bg-secondary-subtle text-secondary-emphasis border">Ctrl K</kbd>
+          </button>
+          <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Ganti Tema">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+          </button>
+          <button class="btn btn-ghost btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#xaCustomizer" aria-label="Kustomisasi Tema">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#palette"/></svg>
+          </button>
+          <div class="dropdown">
+            <button class="btn btn-ghost p-0 rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menu Akun">
+              <div class="xa-avatar xa-avatar--sm">JD</div>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><h6 class="dropdown-header">John Doe</h6></li>
+              <li><a class="dropdown-item" href="profile.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg> Profil</a></li>
+              <li><a class="dropdown-item" href="settings.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg> Pengaturan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#log-out"/></svg> Keluar</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="xa-content" tabindex="-1">
+        <div class="xa-page-header">
+          <div>
+            <h1 class="xa-page-title">Elemen Formulir</h1>
+            <p class="xa-page-description">Komponen formulir bergaya shadcn menggunakan kelas Bootstrap 5 standar.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Kolom 1: Input Dasar & Seleksi -->
+          <div class="col-12 col-lg-6">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="card-title h6 mb-0">Input Standar</h2>
+                <p class="card-subtitle small text-muted">Input teks, angka, email, dan password</p>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="inputName" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Contoh: Budi Santoso">
+                    <div class="form-text">Nama sesuai kartu identitas resmi.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Alamat Email</label>
+                    <div class="input-group">
+                      <span class="input-group-text">
+                        <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"/></svg>
+                      </span>
+                      <input type="email" class="form-control" id="inputEmail" placeholder="nama@domain.com">
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Kata Sandi</label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="••••••••">
+                      <button class="btn btn-outline-secondary" type="button" id="togglePassBtn" aria-label="Lihat kata sandi" onclick="var p = document.getElementById('inputPassword'); p.type = p.type === 'password' ? 'text' : 'password';">
+                        <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#eye"/></svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="selectCategory" class="form-label">Kategori Produk</label>
+                    <select class="form-select" id="selectCategory">
+                      <option selected>Pilih salah satu...</option>
+                      <option value="1">Perangkat Keras (Hardware)</option>
+                      <option value="2">Perangkat Lunak (Software)</option>
+                      <option value="3">Layanan Konsultasi</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-0">
+                    <label for="textareaBio" class="form-label">Catatan Tambahan</label>
+                    <textarea class="form-control" id="textareaBio" rows="3" placeholder="Tuliskan catatan atau instruksi di sini..."></textarea>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Card: Pilihan Checkbox, Radio, Switch -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title h6 mb-0">Checkbox, Radio & Switch</h2>
+                <p class="card-subtitle small text-muted">Kontrol toggle dan seleksi bergaya minimalis</p>
+              </div>
+              <div class="card-body">
+                <h6 class="fw-semibold small text-muted text-uppercase mb-2">Pilihan Jamak (Checkbox)</h6>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="checkNotifyEmail" checked>
+                  <label class="form-check-label" for="checkNotifyEmail">Kirim notifikasi email berkala</label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="checkNotifyWA">
+                  <label class="form-check-label" for="checkNotifyWA">Kirim ringkasan mingguan via WhatsApp</label>
+                </div>
+
+                <hr class="my-3">
+
+                <h6 class="fw-semibold small text-muted text-uppercase mb-2">Pilihan Tunggal (Radio)</h6>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="radioTransfer" checked>
+                  <label class="form-check-label" for="radioTransfer">Transfer Bank / VA</label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="radioEwallet">
+                  <label class="form-check-label" for="radioEwallet">QRIS / Dompet Digital</label>
+                </div>
+
+                <hr class="my-3">
+
+                <h6 class="fw-semibold small text-muted text-uppercase mb-2">Sakelar (Switch)</h6>
+                <div class="form-check form-switch mb-2">
+                  <input class="form-check-input" type="checkbox" role="switch" id="switch2FA" checked>
+                  <label class="form-check-label" for="switch2FA">Autentikasi Dua Faktor (2FA)</label>
+                </div>
+                <div class="form-check form-switch mb-0">
+                  <input class="form-check-input" type="checkbox" role="switch" id="switchAutoRenew">
+                  <label class="form-check-label" for="switchAutoRenew">Perpanjang langganan secara otomatis</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Validasi Formulir & Layout 2 Kolom -->
+          <div class="col-12 col-lg-6">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="card-title h6 mb-0">Status Validasi Formulir</h2>
+                <p class="card-subtitle small text-muted">Contoh input valid dan invalid bawaan Bootstrap</p>
+              </div>
+              <div class="card-body">
+                <form novalidate>
+                  <div class="mb-3">
+                    <label for="validInput" class="form-label">Username Tersedia</label>
+                    <input type="text" class="form-control is-valid" id="validInput" value="johndoe_dev">
+                    <div class="valid-feedback d-block text-success small">Username ini tersedia dan siap dipakai!</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="invalidInput" class="form-label">Kode Kupon Promosi</label>
+                    <input type="text" class="form-control is-invalid" id="invalidInput" value="DISKON99" aria-describedby="invalidFeedbackKupon">
+                    <div class="invalid-feedback d-block" id="invalidFeedbackKupon">Kode kupon telah kadaluarsa atau tidak valid.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="disabledInput" class="form-label">Nomor Rekening (Terkunci)</label>
+                    <input type="text" class="form-control" id="disabledInput" value="5382-0192-3810" disabled>
+                    <div class="form-text">Hubungi admin untuk mengubah rekening penerima.</div>
+                  </div>
+
+                  <div class="mb-0">
+                    <label for="inputFile" class="form-label">Unggah Berkas Pendukung</label>
+                    <input class="form-control" type="file" id="inputFile">
+                    <div class="form-text">Format yang diterima: PDF, PNG, atau JPG maks 5 MB.</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Card: Formulir Grid Responsif -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title h6 mb-0">Formulir Profil Pengguna (Grid)</h2>
+                <p class="card-subtitle small text-muted">Layout 2 kolom dengan tombol aksi di bagian bawah</p>
+              </div>
+              <div class="card-body">
+                <form onsubmit="event.preventDefault(); XaktiAdmin.toast.show({title: 'Berhasil Disimpan', message: 'Profil Anda telah berhasil diperbarui.', variant: 'success'});">
+                  <div class="row g-3 mb-3">
+                    <div class="col-sm-6">
+                      <label for="profileFirstName" class="form-label">Nama Depan</label>
+                      <input type="text" class="form-control" id="profileFirstName" value="Ahmad">
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="profileLastName" class="form-label">Nama Belakang</label>
+                      <input type="text" class="form-control" id="profileLastName" value="Santoso">
+                    </div>
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-sm-6">
+                      <label for="profilePhone" class="form-label">Nomor Telepon</label>
+                      <input type="tel" class="form-control" id="profilePhone" value="+62 812-3456-7890">
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="profileCity" class="form-label">Kota Domisili</label>
+                      <input type="text" class="form-control" id="profileCity" value="Jakarta Selatan">
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <label for="profileAddress" class="form-label">Alamat Lengkap</label>
+                    <textarea class="form-control" id="profileAddress" rows="2">Jl. Jenderal Sudirman Kav. 52-53, Senayan</textarea>
+                  </div>
+
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="reset" class="btn btn-outline-secondary btn-sm">Batal</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Simpan Perubahan</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="mt-auto py-3 px-4 border-top text-center text-muted small">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+          <span>&copy; 2026 <strong>Xakti Admin</strong>. Dibuat dengan Bootstrap 5 & gaya shadcn.</span>
+          <div class="d-flex gap-3">
+            <a href="../documentation.html" class="text-muted text-decoration-none">Panduan</a>
+            <a href="components.html" class="text-muted text-decoration-none">Komponen</a>
+            <a href="blank.html" class="text-muted text-decoration-none">Starter</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Customizer -->
+  <div class="offcanvas offcanvas-end xa-customizer" id="xaCustomizer" tabindex="-1" aria-labelledby="xaCustomizerTitle">
+    <div class="offcanvas-header">
+      <div>
+        <h5 class="offcanvas-title fw-semibold" id="xaCustomizerTitle">Kustomisasi Tema</h5>
+        <p class="text-muted small mb-0">Ubah gaya, warna sidebar, dan aksen</p>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="xa-customizer__section">
+        <div class="xa-customizer__section-title">Mode Tampilan</div>
+        <div class="btn-group w-100" role="group">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="light" data-xa-theme-value="light">Terang</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="dark" data-xa-theme-value="dark">Gelap</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="system" data-xa-theme-value="system">Sistem</button>
+        </div>
+      </div>
+      <div class="xa-customizer__section">
+        <div class="xa-customizer__section-title">Mode Sidebar</div>
+        <div class="btn-group w-100" role="group">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="follow" data-xa-sidebar-mode-value="follow">Ikuti Tema</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="light" data-xa-sidebar-mode-value="light">Terang</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="dark" data-xa-sidebar-mode-value="dark">Gelap</button>
+        </div>
+      </div>
+      <div class="xa-customizer__section">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="xa-customizer__section-title mb-0">Preset Sidebar</span>
+          <span class="badge text-bg-secondary">10 Pilihan</span>
+        </div>
+        <div class="xa-swatches-grid">
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="light"><span class="xa-swatch-circle" style="background-color: #fafafa;"></span> Light</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="dark"><span class="xa-swatch-circle" style="background-color: #09090b;"></span> Dark</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="zinc"><span class="xa-swatch-circle" style="background-color: #18181b;"></span> Zinc</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="slate"><span class="xa-swatch-circle" style="background-color: #0f172a;"></span> Slate</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="blue"><span class="xa-swatch-circle" style="background-color: #172554;"></span> Blue</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="indigo"><span class="xa-swatch-circle" style="background-color: #1e1b4b;"></span> Indigo</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="violet"><span class="xa-swatch-circle" style="background-color: #2e1065;"></span> Violet</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="emerald"><span class="xa-swatch-circle" style="background-color: #064e3b;"></span> Emerald</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="rose"><span class="xa-swatch-circle" style="background-color: #4c0519;"></span> Rose</button>
+          <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="amber"><span class="xa-swatch-circle" style="background-color: #451a03;"></span> Amber</button>
+        </div>
+      </div>
+      <div class="xa-customizer__section">
+        <div class="xa-customizer__section-title">Warna Kustom Sidebar</div>
+        <div class="xa-custom-color-picker"><input type="color" class="xa-color-input" id="xaColorPickerForms" data-xa-sidebar-picker value="#0f172a" aria-label="Pilih warna kustom sidebar"><label for="xaColorPickerForms" class="small text-muted mb-0">Pilih warna bebas (auto-contrast teks otomatis dihitung)</label></div>
+      </div>
+      <div class="xa-customizer__section">
+        <div class="xa-customizer__section-title">Warna Aksen Global</div>
+        <div class="d-flex flex-wrap gap-2"><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="zinc">Zinc</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="blue">Blue</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="green">Green</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="orange">Orange</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="rose">Rose</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="violet">Violet</button></div>
+      </div>
+      <div class="xa-customizer__section">
+        <div class="xa-customizer__section-title">Radius Sudut</div>
+        <div class="btn-group w-100" role="group" aria-label="Radius"><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0">0</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.3">0.3</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.5">0.5</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.75">0.75</button><button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="1">1.0</button></div>
+      </div>
+      <div class="xa-customizer__section d-flex gap-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" data-xa-reset-customizer>Reset Default</button>
+        <button type="button" class="btn btn-primary btn-sm flex-fill" data-xa-export-theme>Salin JSON</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/app.bundle.js" defer></script>
+</body>
+</html>

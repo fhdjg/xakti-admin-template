@@ -1,0 +1,363 @@
+/* ==========================================================================
+   Components — Extensions & Non-Bootstrap Components (R-BS-05, §B4)
+   All classes here are registered in the Extension Registry.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Button Extensions (used with .btn: class="btn btn-ghost", etc.)
+   -------------------------------------------------------------------------- */
+.btn-ghost {
+  --bs-btn-color: var(--foreground);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: var(--accent-foreground);
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: var(--accent-foreground);
+  --bs-btn-active-bg: var(--accent);
+  --bs-btn-active-border-color: transparent;
+  box-shadow: none;
+}
+
+.btn-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-icon.btn-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-icon.btn-lg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Icon Helper (.xa-icon)
+   -------------------------------------------------------------------------- */
+.xa-icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+
+.xa-icon--sm {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.xa-icon--md {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.xa-icon--lg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.xa-icon--xl {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Dashboard helpers */
+.xa-chart-container {
+  position: relative;
+  width: 100%;
+}
+
+.xa-chart-container--lg {
+  height: 18.75rem;
+}
+
+.xa-chart-container--md {
+  height: 13.75rem;
+}
+
+.xa-progress-bar--78 {
+  width: 78%;
+}
+
+/* --------------------------------------------------------------------------
+   Avatar (.xa-avatar)
+   -------------------------------------------------------------------------- */
+.xa-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: var(--muted);
+  color: var(--foreground);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.xa-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.xa-avatar--sm {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.75rem;
+}
+
+.xa-avatar--lg {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.xa-avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.xa-avatar-group .xa-avatar {
+  margin-left: -0.5rem;
+  border: 2px solid var(--background);
+}
+
+.xa-avatar-group .xa-avatar:first-child {
+  margin-left: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Empty State (.xa-empty)
+   -------------------------------------------------------------------------- */
+.xa-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--background);
+}
+
+.xa-empty__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.xa-empty__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}
+
+.xa-empty__description {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  max-width: 24rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Keep the documentation index below the sticky topbar while scrolling. */
+.xa-documentation-toc {
+  top: 4.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Theme Customizer Panel (.xa-customizer)
+   -------------------------------------------------------------------------- */
+.xa-customizer {
+  --bs-offcanvas-width: 22rem;
+}
+
+.xa-customizer__section {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.xa-customizer__section:last-child {
+  border-bottom: 0;
+}
+
+.xa-customizer__section-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  margin-bottom: 0.75rem;
+}
+
+/* Preset swatches grid */
+.xa-swatches-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.xa-swatch-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-align: left;
+}
+
+.xa-swatch-btn:hover {
+  background-color: var(--accent);
+}
+
+.xa-swatch-btn.is-active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+  font-weight: 600;
+}
+
+.xa-swatch-circle {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+/* Color picker row */
+.xa-custom-color-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.xa-color-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+}
+
+.xa-color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.xa-color-input::-webkit-color-swatch {
+  border: none;
+  border-radius: calc(var(--radius-md) - 1px);
+}
+
+/* --------------------------------------------------------------------------
+   Command Palette (.xa-command)
+   -------------------------------------------------------------------------- */
+.xa-command-dialog .modal-dialog {
+  max-width: 36rem;
+  margin-top: 4rem;
+}
+
+.xa-command-dialog .modal-content {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+}
+
+.xa-command__search-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--border);
+  gap: 0.5rem;
+}
+
+.xa-command__search-input {
+  border: 0 !important;
+  box-shadow: none !important;
+  font-size: 0.9375rem;
+  padding: 0.875rem 0.5rem;
+  background: transparent;
+  color: var(--foreground);
+  width: 100%;
+}
+
+.xa-command__search-input:focus {
+  outline: none;
+}
+
+.xa-command__list {
+  max-height: 20rem;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.xa-command__group-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  padding: 0.5rem 0.75rem 0.25rem;
+}
+
+.xa-command__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--foreground);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+
+.xa-command__item:hover,
+.xa-command__item.is-selected {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.xa-command__shortcut {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  color: var(--muted-foreground);
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+}

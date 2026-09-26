@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plugin UI — Xakti Admin</title>
+  <script>
+    (function () {
+      try {
+        var d = document.documentElement;
+        var t = localStorage.getItem('xa:theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        d.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+        d.setAttribute('data-xa-sidebar-theme', dark ? 'dark' : 'light');
+        d.setAttribute('data-xa-sidebar-state', localStorage.getItem('xa:sidebar-state') || 'expanded');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preload" href="../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/app.min.css">
+  <link rel="stylesheet" href="../assets/css/plugin-integrations.css">
+</head>
+<body>
+  <a class="xa-skip-link" href="#main">Lewati ke konten</a>
+  <div class="xa-shell">
+    <aside class="xa-sidebar offcanvas-lg offcanvas-start" id="xaSidebar" tabindex="-1" aria-label="Sidebar Navigasi" data-xa-sidebar>
+      <!-- Header Sidebar -->
+      <div class="xa-sidebar__header">
+        <a class="xa-sidebar__brand" href="../index.html">
+          <div class="xa-sidebar__brand-icon">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sparkles"/></svg>
+          </div>
+          <span class="xa-sidebar__brand-text">Xakti Admin</span>
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#xaSidebar" aria-label="Tutup"></button>
+      </div>
+
+      <!-- Navigasi Sidebar -->
+      <nav class="xa-sidebar__nav" aria-label="Navigasi Utama">
+        <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Utama</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#layout-dashboard"/></svg>
+                <span class="xa-sidebar__text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data-table.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#table"/></svg>
+                <span class="xa-sidebar__text">Data Table</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forms.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file-text"/></svg>
+                <span class="xa-sidebar__text">Formulir</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../project-structure.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#folder"/></svg>
+                <span class="xa-sidebar__text">Struktur Project</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+<div class="xa-sidebar__section" data-xa-plugin-menu>
+          <p class="xa-sidebar__label">Plugin UI</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuPlugins" aria-expanded="true" aria-controls="menuPlugins">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#blocks"/></svg>
+                <span class="xa-sidebar__text">Plugin UI</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse show" id="menuPlugins">
+                 <li class="nav-item"><a class="nav-link active" href="plugin-examples.html" aria-current="page">Contoh penggunaan</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+                <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Tampilan & Komponen</p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="components.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#blocks"/></svg>
+                <span class="xa-sidebar__text">Komponen (UI)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="settings.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg>
+                <span class="xa-sidebar__text">Pengaturan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg>
+                <span class="xa-sidebar__text">Profil Saya</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="xa-sidebar__section">
+          <div class="xa-sidebar__section">
+          <p class="xa-sidebar__label">Bantuan</p>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="../documentation.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file-text"/></svg><span class="xa-sidebar__text">Dokumentasi</span></a></li>
+          </ul>
+        </div>
+
+        <p class="xa-sidebar__label">Halaman Lainnya</p>
+          <ul class="nav flex-column">
+            <!-- Dropdown Menu Bertingkat (Bootstrap Collapse) -->
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuAuth" aria-expanded="false" aria-controls="menuAuth">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#lock"/></svg>
+                <span class="xa-sidebar__text">Autentikasi</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuAuth">
+                <li class="nav-item">
+                  <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuLogin" aria-expanded="false" aria-controls="menuLogin">
+                    <span class="xa-sidebar__text">Masuk (Login)</span>
+                    <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+                  </button>
+                  <ul class="nav flex-column collapse" id="menuLogin">
+                    <li class="nav-item"><a class="nav-link" href="auth/login.html">Dengan Email</a></li>
+                    <li class="nav-item"><a class="nav-link" href="auth/login.html#otp">Dengan OTP</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="auth/register.html">Daftar (Register)</a></li>
+                <li class="nav-item"><a class="nav-link" href="auth/forgot-password.html">Lupa Kata Sandi</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuErrors" aria-expanded="false" aria-controls="menuErrors">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#shield-alert"/></svg>
+                <span class="xa-sidebar__text">Halaman Error</span>
+                <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevron-right"/></svg>
+              </button>
+              <ul class="nav flex-column collapse" id="menuErrors">
+                <li class="nav-item"><a class="nav-link" href="errors/403.html">403 Dilarang</a></li>
+                <li class="nav-item"><a class="nav-link" href="errors/404.html">404 Tidak Ditemukan</a></li>
+                <li class="nav-item"><a class="nav-link" href="errors/500.html">500 Server Error</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="blank.html">
+                <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#file"/></svg>
+                <span class="xa-sidebar__text">Blank Starter</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Footer Sidebar -->
+      <div class="xa-sidebar__footer">
+        <div class="dropdown w-100">
+          <button class="btn btn-ghost w-100 d-flex align-items-center gap-2 p-1 text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="xa-avatar xa-avatar--sm">JD</div>
+            <div class="xa-sidebar__user-info overflow-hidden flex-fill">
+              <div class="fw-semibold text-truncate small">John Doe</div>
+              <div class="text-muted text-truncate">admin@xakti.id</div>
+            </div>
+            <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="../assets/icons/sprite.svg#chevrons-up-down"/></svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li><a class="dropdown-item" href="profile.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"/></svg> Profil</a></li>
+            <li><a class="dropdown-item" href="settings.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#settings"/></svg> Pengaturan</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#log-out"/></svg> Keluar</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <div class="xa-shell__body">
+      <header class="navbar xa-topbar"><div class="xa-topbar__left"><button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle aria-label="Buka Sidebar"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg></button><button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle aria-label="Lipat Sidebar"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#panel-left"/></svg></button><nav aria-label="Breadcrumb" class="d-none d-sm-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Aplikasi</a></li><li class="breadcrumb-item active" aria-current="page">Plugin UI</li></ol></nav></div><div class="xa-topbar__right"><button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Ganti Tema"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg></button></div></header>
+      <main id="main" class="xa-content" tabindex="-1">
+        <div class="xa-page-header"><div><h1 class="xa-page-title">Plugin UI</h1><p class="xa-page-description">Contoh konfigurasi dan tampilan plugin populer yang menyatu dengan token Bootstrap shadcn Xakti Admin.</p></div></div>
+        <div class="alert alert-info d-flex gap-2 align-items-start" role="note"><svg class="xa-icon mt-1" aria-hidden="true"><use href="../assets/icons/sprite.svg#info"/></svg><div><strong>Catatan instalasi:</strong> halaman ini menunjukkan markup dan hasil visual. Tambahkan aset plugin secara lokal di aplikasi Anda; tidak ada request CDN atau jQuery yang ditambahkan ke template inti.</div></div>
+        <div class="row g-4">
+          <section class="col-12" aria-labelledby="datatables-title"><div class="card"><div class="card-header"><h2 id="datatables-title" class="card-title h6 mb-1">DataTables — Bootstrap 5</h2><p class="card-subtitle">Toolbar, tabel, status, dan pagination mengikuti token template.</p></div><div class="card-body"><div class="d-flex flex-wrap justify-content-between gap-3 mb-3"><label class="form-label mb-0 d-flex align-items-center gap-2">Tampilkan <select class="form-select form-select-sm" aria-label="Jumlah baris"><option>10</option><option>25</option></select> baris</label><label class="form-label mb-0">Cari <input class="form-control form-control-sm d-inline-block ms-2" type="search" aria-label="Cari data" placeholder="Cari data..."></label></div><div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead><tr><th scope="col">Nama pelanggan</th><th scope="col">Kota</th><th scope="col">Status</th><th scope="col" class="text-end">Nilai</th></tr></thead><tbody><tr><td>Rina Kartika</td><td>Bandung</td><td><span class="badge text-bg-success">Aktif</span></td><td class="text-end">Rp 4.250.000</td></tr><tr><td>Bagus Pratama</td><td>Surabaya</td><td><span class="badge text-bg-secondary">Menunggu</span></td><td class="text-end">Rp 2.850.000</td></tr><tr><td>Sari Permata</td><td>Jakarta</td><td><span class="badge text-bg-success">Aktif</span></td><td class="text-end">Rp 7.100.000</td></tr></tbody></table></div></div><div class="card-footer d-flex justify-content-between align-items-center"><small class="text-body-secondary">Menampilkan 1–3 dari 3 data</small><nav aria-label="Pagination contoh"><ul class="pagination pagination-sm mb-0"><li class="page-item disabled"><a class="page-link" href="#" aria-label="Sebelumnya">‹</a></li><li class="page-item active"><a class="page-link" href="#" aria-current="page">1</a></li><li class="page-item disabled"><a class="page-link" href="#" aria-label="Berikutnya">›</a></li></ul></nav></div></div></section>
+          <section class="col-12 col-xl-6" aria-labelledby="summernote-title"><div class="card h-100"><div class="card-header"><h2 id="summernote-title" class="card-title h6 mb-1">Summernote WYSIWYG</h2><p class="card-subtitle">Toolbar, area editor, dan status bar menggunakan surface dan border template.</p></div><div class="card-body"><label class="form-label" for="summernote-demo">Isi artikel</label><div class="note-editor note-frame"><div class="note-toolbar p-2 d-flex flex-wrap gap-1" role="toolbar" aria-label="Toolbar editor"><button class="btn btn-sm note-btn" type="button"><strong>B</strong></button><button class="btn btn-sm note-btn" type="button"><em>I</em></button><button class="btn btn-sm note-btn" type="button">Tautan</button><button class="btn btn-sm note-btn" type="button">Daftar</button></div><div id="summernote-demo" class="note-editable p-3" contenteditable="true" role="textbox" aria-label="Isi artikel">Tulis konten artikel di sini...</div><div class="note-statusbar p-1 text-end"><small class="text-body-secondary">0 kata</small></div></div></div></div></section>
+          <section class="col-12 col-xl-6" aria-labelledby="select2-title"><div class="card h-100"><div class="card-header"><h2 id="select2-title" class="card-title h6 mb-1">Select2</h2><p class="card-subtitle">Selection, dropdown, hasil terpilih, dan focus ring yang konsisten.</p></div><div class="card-body"><label class="form-label" for="select2-demo">Pilih provinsi</label><select id="select2-demo" class="form-select" aria-describedby="select2-help"><option>Jawa Barat</option><option>Jawa Timur</option><option>DKI Jakarta</option></select><div id="select2-help" class="form-text">Markup ini dapat langsung di-upgrade oleh Select2 tanpa mengganti class Bootstrap.</div><div class="select2-container select2-container--default mt-4" aria-label="Pratinjau Select2"><span class="select2-selection select2-selection--single d-flex align-items-center justify-content-between px-3"><span class="select2-selection__rendered">Jawa Barat</span><span aria-hidden="true">⌄</span></span></div></div></div></section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js" defer></script><script src="../assets/js/app.bundle.js" defer></script>
+</body>
+</html>
