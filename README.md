@@ -196,8 +196,6 @@ Untuk rincian per file, lihat [Struktur Project](project-structure.html).
 - [Struktur project dan ukuran aset](project-structure.html)
 - [Galeri komponen UI](pages/components.html)
 - [Contoh integrasi plugin UI](pages/plugin-examples.html)
-- [Rules & Guidelines](../docs/RULES-GUIDELINES-xakti-admin.md)
-- [PRD](../docs/PRD-admin-template-bootstrap-shadcn.md)
 
 ## 📄 Lisensi
 
