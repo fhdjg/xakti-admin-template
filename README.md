@@ -197,6 +197,14 @@ Untuk rincian per file, lihat [Struktur Project](project-structure.html).
 - [Galeri komponen UI](pages/components.html)
 - [Contoh integrasi plugin UI](pages/plugin-examples.html)
 
+## ☕ Dukung pengembangan
+
+Jika Xakti Admin membantu proyek Anda, dukung pengembangannya melalui:
+
+- [☕ Buy Me a Coffee](https://www.buymeacoffee.com/nayfos)
+- [💝 Saweria](https://saweria.co/nayfos)
+- [💜 GitHub Sponsors](https://github.com/sponsors/fhdjg)
+
 ## 📄 Lisensi
 
 Didistribusikan di bawah lisensi [MIT](LICENSE). Silakan gunakan secara bebas untuk keperluan proyek pribadi, instansi, maupun komersial.
