@@ -36,9 +36,9 @@ export function show({ title = '', message = '', variant = 'default', delay = 40
       <svg class="xa-icon me-2 text-primary" aria-hidden="true">
         <use href="${document.baseURI.includes('/pages/') ? '../' : ''}assets/icons/sprite.svg#${iconName}"/>
       </svg>
-      <strong class="me-auto">${title || 'Notifikasi'}</strong>
-      <small class="text-body-secondary">Baru saja</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      <strong class="me-auto">${title || 'Notifications'}</strong>
+      <small class="text-body-secondary">New saja</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
       ${message}
@@ -67,7 +67,7 @@ export function init() {
     const trigger = e.target.closest('[data-xa-toast]');
     if (trigger) {
       const title = trigger.getAttribute('data-xa-toast-title') || 'Info';
-      const message = trigger.getAttribute('data-xa-toast-message') || 'Aksi berhasil dijalankan.';
+      const message = trigger.getAttribute('data-xa-toast-message') || 'Action completed successfully.';
       const variant = trigger.getAttribute('data-xa-toast-variant') || 'default';
       show({ title, message, variant });
     }

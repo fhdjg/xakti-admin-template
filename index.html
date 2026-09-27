@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="id" data-bs-theme="light">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard — Xakti Admin</title>
 
-  <!-- Theme init: sinkron, < 1 KB, sebelum CSS dirender (R-THM-06) -->
+  <!-- Theme init: synchronized, < 1 KB, before CSS is rendered (R-THM-06) -->
   <script>
     (function () {
       try {
@@ -41,12 +41,12 @@
   <link rel="stylesheet" href="assets/css/app.min.css">
 </head>
 <body>
-  <!-- Tautan Lewati ke Konten (R-HTM-03) -->
-  <a class="xa-skip-link" href="#main">Lewati ke konten</a>
+  <!-- Skip to Content (R-HTM-03) -->
+  <a class="xa-skip-link" href="#main">Skip to content</a>
 
   <div class="xa-shell">
     <!-- Sidebar (Offcanvas-lg untuk Mobile & Collapsible untuk Desktop) -->
-    <aside class="xa-sidebar offcanvas-lg offcanvas-start" id="xaSidebar" tabindex="-1" aria-label="Sidebar Navigasi" data-xa-sidebar>
+    <aside class="xa-sidebar offcanvas-lg offcanvas-start" id="xaSidebar" tabindex="-1" aria-label="Sidebar Navigation" data-xa-sidebar>
       <!-- Header Sidebar -->
       <div class="xa-sidebar__header">
         <a class="xa-sidebar__brand" href="index.html">
@@ -55,13 +55,13 @@
           </div>
           <span class="xa-sidebar__brand-text">Xakti Admin</span>
         </a>
-        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#xaSidebar" aria-label="Tutup"></button>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#xaSidebar" aria-label="Close"></button>
       </div>
 
-      <!-- Navigasi Sidebar -->
-      <nav class="xa-sidebar__nav" aria-label="Navigasi Utama">
+      <!-- Navigation Sidebar -->
+      <nav class="xa-sidebar__nav" aria-label="Main Navigation">
         <div class="xa-sidebar__section">
-          <p class="xa-sidebar__label">Utama</p>
+          <p class="xa-sidebar__label">Main</p>
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active" href="index.html" aria-current="page">
@@ -78,13 +78,13 @@
             <li class="nav-item">
               <a class="nav-link" href="pages/forms.html">
                 <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#file-text"/></svg>
-                <span class="xa-sidebar__text">Formulir</span>
+                <span class="xa-sidebar__text">Forms</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="project-structure.html">
                 <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#folder"/></svg>
-                <span class="xa-sidebar__text">Struktur Project</span>
+                <span class="xa-sidebar__text">Project Structure</span>
               </a>
             </li>
           </ul>
@@ -100,31 +100,31 @@
                 <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-right"/></svg>
               </button>
               <ul class="nav flex-column collapse" id="menuPlugins">
-                <li class="nav-item"><a class="nav-link" href="pages/plugin-examples.html">Contoh penggunaan</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/plugin-examples.html">Usage Examples</a></li>
               </ul>
             </li>
           </ul>
         </div>
 
                 <div class="xa-sidebar__section">
-          <p class="xa-sidebar__label">Tampilan & Komponen</p>
+          <p class="xa-sidebar__label">Appearance & Components</p>
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="pages/components.html">
                 <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#blocks"/></svg>
-                <span class="xa-sidebar__text">Komponen (UI)</span>
+                <span class="xa-sidebar__text">Components (UI)</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/settings.html">
                 <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#settings"/></svg>
-                <span class="xa-sidebar__text">Pengaturan</span>
+                <span class="xa-sidebar__text">Settings</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/profile.html">
                 <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#user"/></svg>
-                <span class="xa-sidebar__text">Profil Saya</span>
+                <span class="xa-sidebar__text">My Profile</span>
               </a>
             </li>
           </ul>
@@ -132,46 +132,46 @@
 
         <div class="xa-sidebar__section">
           <div class="xa-sidebar__section">
-          <p class="xa-sidebar__label">Bantuan</p>
+          <p class="xa-sidebar__label">Help</p>
           <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="documentation.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#file-text"/></svg><span class="xa-sidebar__text">Dokumentasi</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="documentation.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#file-text"/></svg><span class="xa-sidebar__text">Documentation</span></a></li>
           </ul>
         </div>
 
-        <p class="xa-sidebar__label">Halaman Lainnya</p>
+        <p class="xa-sidebar__label">Other Pages</p>
           <ul class="nav flex-column">
             <!-- Dropdown Menu Bertingkat (Bootstrap Collapse) -->
             <li class="nav-item">
               <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuAuth" aria-expanded="false" aria-controls="menuAuth">
                 <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#lock"/></svg>
-                <span class="xa-sidebar__text">Autentikasi</span>
+                <span class="xa-sidebar__text">Authentication</span>
                 <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-right"/></svg>
               </button>
               <ul class="nav flex-column collapse" id="menuAuth">
                 <li class="nav-item">
                   <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuLogin" aria-expanded="false" aria-controls="menuLogin">
-                    <span class="xa-sidebar__text">Masuk (Login)</span>
+                    <span class="xa-sidebar__text">Sign In (Login)</span>
                     <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-right"/></svg>
                   </button>
                   <ul class="nav flex-column collapse" id="menuLogin">
-                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html">Dengan Email</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html#otp">Dengan OTP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html">With Email</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html#otp">With OTP</a></li>
                   </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="pages/auth/register.html">Daftar (Register)</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/auth/forgot-password.html">Lupa Kata Sandi</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/auth/register.html">Sign Up (Register)</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/auth/forgot-password.html">Forgot Password</a></li>
               </ul>
             </li>
 
             <li class="nav-item">
               <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#menuErrors" aria-expanded="false" aria-controls="menuErrors">
                 <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#shield-alert"/></svg>
-                <span class="xa-sidebar__text">Halaman Error</span>
+                <span class="xa-sidebar__text">Error Pages</span>
                 <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-right"/></svg>
               </button>
               <ul class="nav flex-column collapse" id="menuErrors">
-                <li class="nav-item"><a class="nav-link" href="pages/errors/403.html">403 Dilarang</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/errors/404.html">404 Tidak Ditemukan</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/errors/403.html">403 Forbidden</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/errors/404.html">404 Not Found</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/errors/500.html">500 Server Error</a></li>
               </ul>
             </li>
@@ -198,10 +198,10 @@
             <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true"><use href="assets/icons/sprite.svg#chevrons-up-down"/></svg>
           </button>
           <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-            <li><a class="dropdown-item" href="pages/profile.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#user"/></svg> Profil</a></li>
-            <li><a class="dropdown-item" href="pages/settings.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#settings"/></svg> Pengaturan</a></li>
+            <li><a class="dropdown-item" href="pages/profile.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#user"/></svg> Profile</a></li>
+            <li><a class="dropdown-item" href="pages/settings.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#settings"/></svg> Settings</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="pages/auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#log-out"/></svg> Keluar</a></li>
+            <li><a class="dropdown-item text-danger" href="pages/auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#log-out"/></svg> Sign Out</a></li>
           </ul>
         </div>
       </div>
@@ -213,19 +213,19 @@
       <header class="navbar xa-topbar">
         <div class="xa-topbar__left">
           <!-- Toggle Sidebar Mobile -->
-          <button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle aria-label="Buka Sidebar">
+          <button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle aria-label="Open Sidebar">
             <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#menu"/></svg>
           </button>
 
           <!-- Toggle Sidebar Desktop -->
-          <button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle aria-label="Lipat Sidebar (Ctrl+B)">
+          <button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle aria-label="Collapse Sidebar (Ctrl+B)">
             <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#panel-left"/></svg>
           </button>
 
           <!-- Breadcrumbs -->
           <nav aria-label="Breadcrumb" class="d-none d-sm-block">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Aplikasi</a></li>
+              <li class="breadcrumb-item"><a href="index.html">Application</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
           </nav>
@@ -233,67 +233,67 @@
 
         <div class="xa-topbar__right">
           <!-- Command Palette Trigger -->
-          <button class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex align-items-center gap-2 text-muted" type="button" data-xa-command-open aria-label="Cari Cepat">
+          <button class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex align-items-center gap-2 text-muted" type="button" data-xa-command-open aria-label="Quick Search">
             <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#search"/></svg>
-            <span>Cari apa saja...</span>
+            <span>Search anything...</span>
             <kbd class="badge bg-secondary-subtle text-secondary-emphasis border">Ctrl K</kbd>
           </button>
 
-          <button class="btn btn-ghost btn-icon d-md-none" type="button" data-xa-command-open aria-label="Cari">
+          <button class="btn btn-ghost btn-icon d-md-none" type="button" data-xa-command-open aria-label="Search">
             <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#search"/></svg>
           </button>
 
           <!-- Quick Theme Toggle -->
-          <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Ganti Tema Terang/Gelap">
+          <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Toggle Light/Dark Theme">
             <svg class="xa-icon d-block dark-hidden" aria-hidden="true"><use href="assets/icons/sprite.svg#sun"/></svg>
             <svg class="xa-icon d-none dark-visible" aria-hidden="true"><use href="assets/icons/sprite.svg#moon"/></svg>
           </button>
 
           <!-- Theme Customizer Panel Trigger -->
-          <button class="btn btn-ghost btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#xaCustomizer" aria-label="Buka Kustomisasi Tema">
+          <button class="btn btn-ghost btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#xaCustomizer" aria-label="Open Theme Customizer">
             <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#palette"/></svg>
           </button>
 
-          <!-- Notifikasi Dropdown -->
+          <!-- Notifications Dropdown -->
           <div class="dropdown">
-            <button class="btn btn-ghost btn-icon position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <button class="btn btn-ghost btn-icon position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
               <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bell"/></svg>
               <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
-                <span class="visually-hidden">Notifikasi baru</span>
+                <span class="visually-hidden">New notifications</span>
               </span>
             </button>
             <div class="dropdown-menu dropdown-menu-end p-2 shadow-sm xa-notification-menu">
               <div class="d-flex align-items-center justify-content-between p-2 border-bottom">
-                <span class="fw-semibold small">Notifikasi</span>
-                <span class="badge text-bg-primary">3 Baru</span>
+                <span class="fw-semibold small">Notifications</span>
+                <span class="badge text-bg-primary">3 New</span>
               </div>
               <div class="py-1">
                 <a href="#" class="dropdown-item py-2">
-                  <div class="small fw-semibold">Pesanan baru #2041</div>
-                  <div class="text-muted" style="font-size: 0.75rem;">Pembayaran Rp 1.450.000 sukses</div>
+                  <div class="small fw-semibold">New order #2041</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">Payment of Rp 1,450,000 successful</div>
                 </a>
                 <a href="#" class="dropdown-item py-2">
-                  <div class="small fw-semibold">Laporan bulanan siap</div>
-                  <div class="text-muted" style="font-size: 0.75rem;">Data periode Agustus telah diekspor</div>
+                  <div class="small fw-semibold">Monthly report ready</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">August data has been exported</div>
                 </a>
               </div>
               <div class="text-center pt-2 border-top">
-                <a href="#" class="btn btn-link btn-sm p-0" style="font-size: 0.75rem;">Lihat semua notifikasi</a>
+                <a href="#" class="btn btn-link btn-sm p-0" style="font-size: 0.75rem;">View all notifications</a>
               </div>
             </div>
           </div>
 
           <!-- User Avatar Menu -->
           <div class="dropdown">
-            <button class="btn btn-ghost p-0 rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menu Akun">
+            <button class="btn btn-ghost p-0 rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account Menu">
               <div class="xa-avatar xa-avatar--sm">JD</div>
             </button>
             <ul class="dropdown-menu dropdown-menu-end shadow-sm">
               <li><h6 class="dropdown-header">John Doe (Administrator)</h6></li>
-              <li><a class="dropdown-item" href="pages/profile.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#user"/></svg> Profil Saya</a></li>
-              <li><a class="dropdown-item" href="pages/settings.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#settings"/></svg> Pengaturan</a></li>
+              <li><a class="dropdown-item" href="pages/profile.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#user"/></svg> My Profile</a></li>
+              <li><a class="dropdown-item" href="pages/settings.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#settings"/></svg> Settings</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="pages/auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#log-out"/></svg> Keluar</a></li>
+              <li><a class="dropdown-item text-danger" href="pages/auth/login.html"><svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#log-out"/></svg> Sign Out</a></li>
             </ul>
           </div>
         </div>
@@ -304,22 +304,22 @@
         <!-- Page Header -->
         <div class="xa-page-header">
           <div>
-            <h1 class="xa-page-title">Dashboard Analitik</h1>
-            <p class="xa-page-description">Ringkasan performa bisnis dan metriks operasional hari ini.</p>
+            <h1 class="xa-page-title">Analytics Dashboard</h1>
+            <p class="xa-page-description">A summary of today’s business performance and operational metrics.</p>
           </div>
           <div class="d-flex gap-2">
-            <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-toast data-xa-toast-title="Sinkronisasi" data-xa-toast-message="Data metrik berhasil diperbarui." data-xa-toast-variant="success">
+            <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-toast data-xa-toast-title="Sync" data-xa-toast-message="Metrics data updated successfully." data-xa-toast-variant="success">
               <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#refresh-cw"/></svg>
               <span>Segarkan</span>
             </button>
-            <button type="button" class="btn btn-primary btn-sm" data-xa-toast data-xa-toast-title="Unduh" data-xa-toast-message="Laporan PDF sedang diunduh..." data-xa-toast-variant="success">
+            <button type="button" class="btn btn-primary btn-sm" data-xa-toast data-xa-toast-title="Download" data-xa-toast-message="Downloading PDF report..." data-xa-toast-variant="success">
               <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#download"/></svg>
-              <span>Unduh Laporan</span>
+              <span>Download Report</span>
             </button>
           </div>
         </div>
 
-        <!-- Dashboard toolbar: pola filter Bootstrap untuk halaman admin -->
+        <!-- Dashboard toolbar: Bootstrap filter pattern for admin pages -->
         <form class="card mb-3" aria-label="Filter dashboard" data-xa-dashboard-filter>
           <div class="card-body d-flex flex-column flex-lg-row align-items-lg-end gap-3 py-3">
             <div class="flex-grow-1">
@@ -333,16 +333,16 @@
             <div class="flex-grow-1">
               <label for="dashboardSegment" class="form-label small fw-medium mb-1">Segmen</label>
               <select class="form-select form-select-sm" id="dashboardSegment">
-                <option>Semua segmen</option>
-                <option>Pelanggan baru</option>
-                <option>Pelanggan aktif</option>
+                <option>All segments</option>
+                <option>New customers</option>
+                <option>Customers aktif</option>
               </select>
             </div>
             <div class="btn-group" role="group" aria-label="Perbandingan periode">
               <button type="button" class="btn btn-outline-secondary btn-sm active">Bulanan</button>
-              <button type="button" class="btn btn-outline-secondary btn-sm">Mingguan</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm">Weekly</button>
             </div>
-            <button type="button" class="btn btn-primary btn-sm" data-xa-toast data-xa-toast-title="Filter diterapkan" data-xa-toast-message="Data dashboard diperbarui sesuai filter yang dipilih." data-xa-toast-variant="success">
+            <button type="button" class="btn btn-primary btn-sm" data-xa-toast data-xa-toast-title="Filter Applied" data-xa-toast-message="Dashboard data updated according to the selected filters." data-xa-toast-variant="success">
               <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#filter"/></svg>
               Terapkan filter
             </button>
@@ -352,8 +352,8 @@
         <div class="alert alert-success d-flex align-items-start gap-2 mb-4" role="status">
           <svg class="xa-icon mt-1" aria-hidden="true"><use href="assets/icons/sprite.svg#check-circle-2"/></svg>
           <div>
-            <strong>Semua sistem beroperasi normal.</strong>
-            <div class="small">Data terakhir disinkronkan 5 menit lalu.</div>
+            <strong>All systems are operating normally.</strong>
+            <div class="small">Data last synchronized 5 minutes ago.</div>
           </div>
         </div>
 
@@ -363,7 +363,7 @@
             <div class="card h-100">
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between mb-2">
-                  <span class="text-body-secondary small fw-medium">Total Pendapatan</span>
+                  <span class="text-body-secondary small fw-medium">Total Revenue</span>
                   <div class="p-1 rounded bg-secondary-subtle">
                     <svg class="xa-icon text-muted" aria-hidden="true"><use href="assets/icons/sprite.svg#dollar-sign"/></svg>
                   </div>
@@ -372,7 +372,7 @@
                 <div class="d-flex align-items-center gap-1 text-success small">
                   <svg class="xa-icon xa-icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#trending-up"/></svg>
                   <span>+18.2%</span>
-                  <span class="text-body-secondary">dari bulan lalu</span>
+                  <span class="text-body-secondary">from last month</span>
                 </div>
               </div>
             </div>
@@ -382,7 +382,7 @@
             <div class="card h-100">
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between mb-2">
-                  <span class="text-body-secondary small fw-medium">Pengguna Aktif</span>
+                  <span class="text-body-secondary small fw-medium">Active Users</span>
                   <div class="p-1 rounded bg-secondary-subtle">
                     <svg class="xa-icon text-muted" aria-hidden="true"><use href="assets/icons/sprite.svg#users"/></svg>
                   </div>
@@ -391,7 +391,7 @@
                 <div class="d-flex align-items-center gap-1 text-success small">
                   <svg class="xa-icon xa-icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#trending-up"/></svg>
                   <span>+8.4%</span>
-                  <span class="text-body-secondary">dari bulan lalu</span>
+                  <span class="text-body-secondary">from last month</span>
                 </div>
               </div>
             </div>
@@ -401,7 +401,7 @@
             <div class="card h-100">
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between mb-2">
-                  <span class="text-body-secondary small fw-medium">Transaksi Sukses</span>
+                  <span class="text-body-secondary small fw-medium">Successful Transactions</span>
                   <div class="p-1 rounded bg-secondary-subtle">
                     <svg class="xa-icon text-muted" aria-hidden="true"><use href="assets/icons/sprite.svg#credit-card"/></svg>
                   </div>
@@ -410,7 +410,7 @@
                 <div class="d-flex align-items-center gap-1 text-success small">
                   <svg class="xa-icon xa-icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#trending-up"/></svg>
                   <span>+12.5%</span>
-                  <span class="text-body-secondary">dari bulan lalu</span>
+                  <span class="text-body-secondary">from last month</span>
                 </div>
               </div>
             </div>
@@ -429,7 +429,7 @@
                 <div class="d-flex align-items-center gap-1 text-danger small">
                   <svg class="xa-icon xa-icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#trending-down"/></svg>
                   <span>-0.4%</span>
-                  <span class="text-body-secondary">dari bulan lalu</span>
+                  <span class="text-body-secondary">from last month</span>
                 </div>
               </div>
             </div>
@@ -444,14 +444,14 @@
               <div class="card-header d-flex align-items-center justify-content-between">
                 <div>
                   <h2 class="card-title h6 mb-0">Tren Arus Keuangan (2026)</h2>
-                  <p class="card-subtitle small text-muted">Perbandingan pendapatan dan pengeluaran per bulan</p>
+                  <p class="card-subtitle small text-muted">Monthly revenue and expense comparison</p>
                 </div>
                 <div class="dropdown">
                   <button class="btn btn-ghost btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#more-horizontal"/></svg>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Ekspor CSV</a></li>
+                    <li><a class="dropdown-item" href="#">Export CSV</a></li>
                     <li><a class="dropdown-item" href="#">Cetak Grafik</a></li>
                   </ul>
                 </div>
@@ -500,22 +500,22 @@
             <div class="card h-100">
               <div class="card-header d-flex align-items-center justify-content-between">
                 <div>
-                  <h2 class="card-title h6 mb-0">Target bulan ini</h2>
-                  <p class="card-subtitle small text-muted">Kemajuan pendapatan terhadap target September</p>
+                  <h2 class="card-title h6 mb-0">This month’s target</h2>
+                  <p class="card-subtitle small text-muted">Revenue progress toward the September target</p>
                 </div>
                 <span class="badge text-bg-success">On track</span>
               </div>
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">
                   <span class="h4 fw-bold mb-0">Rp 468,2 jt</span>
-                  <span class="small text-body-secondary">dari Rp 600 jt</span>
+                  <span class="small text-body-secondary">of Rp 600 jt</span>
                 </div>
-                <div class="progress" role="progressbar" aria-label="Pencapaian target pendapatan" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress" role="progressbar" aria-label="Revenue target achievement" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
                   <div class="progress-bar xa-progress-bar--78">78%</div>
                 </div>
                 <div class="d-flex justify-content-between mt-2 small text-body-secondary">
-                  <span>Rp 131,8 jt lagi untuk target</span>
-                  <span>12 hari tersisa</span>
+                  <span>Rp 131,8 jt more to reach target</span>
+                  <span>12 days remaining</span>
                 </div>
               </div>
             </div>
@@ -523,8 +523,8 @@
           <div class="col-12 col-lg-5">
             <div class="card h-100">
               <div class="card-header">
-                <h2 class="card-title h6 mb-0">Aksi cepat</h2>
-                <p class="card-subtitle small text-muted">Pekerjaan yang sering dilakukan</p>
+                <h2 class="card-title h6 mb-0">Quick Actions</h2>
+                <p class="card-subtitle small text-muted">Frequently performed tasks</p>
               </div>
               <div class="list-group list-group-flush">
                 <a href="pages/data-table.html" class="list-group-item list-group-item-action d-flex align-items-center gap-2 py-3">
@@ -534,7 +534,7 @@
                 </a>
                 <a href="pages/forms.html" class="list-group-item list-group-item-action d-flex align-items-center gap-2 py-3">
                   <svg class="xa-icon text-primary" aria-hidden="true"><use href="assets/icons/sprite.svg#file-plus-2"/></svg>
-                  <span class="flex-grow-1">Buat laporan baru</span>
+                  <span class="flex-grow-1">Create new report</span>
                   <svg class="xa-icon text-body-secondary" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-right"/></svg>
                 </a>
               </div>
@@ -548,20 +548,20 @@
             <div class="card">
               <div class="card-header d-flex align-items-center justify-content-between">
                 <div>
-                  <h2 class="card-title h6 mb-0">Transaksi Terbaru</h2>
-                  <p class="card-subtitle small text-muted">Daftar pembayaran yang masuk hari ini</p>
+                  <h2 class="card-title h6 mb-0">Recent Transactions</h2>
+                  <p class="card-subtitle small text-muted">Payments received today</p>
                 </div>
-                <a href="pages/data-table.html" class="btn btn-outline-secondary btn-sm">Lihat Semua</a>
+                <a href="pages/data-table.html" class="btn btn-outline-secondary btn-sm">View All</a>
               </div>
               <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                   <thead>
                     <tr>
-                      <th scope="col">ID Transaksi</th>
-                      <th scope="col">Pelanggan</th>
+                      <th scope="col">Transaction ID</th>
+                      <th scope="col">Customers</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Jumlah</th>
-                      <th scope="col" class="text-end">Aksi</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col" class="text-end">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -576,10 +576,10 @@
                           </div>
                         </div>
                       </td>
-                      <td><span class="badge text-bg-success">Berhasil</span></td>
+                      <td><span class="badge text-bg-success">Successful</span></td>
                       <td class="fw-semibold">Rp 1.450.000</td>
                       <td class="text-end">
-                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Rincian Transaksi">
+                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Transaction Details">
                           <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#more-vertical"/></svg>
                         </button>
                       </td>
@@ -598,7 +598,7 @@
                       <td><span class="badge text-bg-warning">Pending</span></td>
                       <td class="fw-semibold">Rp 3.820.000</td>
                       <td class="text-end">
-                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Rincian Transaksi">
+                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Transaction Details">
                           <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#more-vertical"/></svg>
                         </button>
                       </td>
@@ -614,10 +614,10 @@
                           </div>
                         </div>
                       </td>
-                      <td><span class="badge text-bg-success">Berhasil</span></td>
+                      <td><span class="badge text-bg-success">Successful</span></td>
                       <td class="fw-semibold">Rp 890.000</td>
                       <td class="text-end">
-                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Rincian Transaksi">
+                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Transaction Details">
                           <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#more-vertical"/></svg>
                         </button>
                       </td>
@@ -628,15 +628,15 @@
                         <div class="d-flex align-items-center gap-2">
                           <div class="xa-avatar xa-avatar--sm">DW</div>
                           <div>
-                            <div class="fw-medium">Dewi Wulandari</div>
+                            <div class="fw-medium">Dewi Wulanof</div>
                             <div class="text-muted small">dewi.w@yahoo.com</div>
                           </div>
                         </div>
                       </td>
-                      <td><span class="badge text-bg-danger">Gagal</span></td>
+                      <td><span class="badge text-bg-danger">Failed</span></td>
                       <td class="fw-semibold">Rp 2.100.000</td>
                       <td class="text-end">
-                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Rincian Transaksi">
+                        <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Transaction Details">
                           <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#more-vertical"/></svg>
                         </button>
                       </td>
@@ -651,8 +651,8 @@
           <div class="col-12 col-xl-4">
             <div class="card h-100">
               <div class="card-header">
-                <h2 class="card-title h6 mb-0">Aktivitas Sistem</h2>
-                <p class="card-subtitle small text-muted">Log peristiwa operasional terbaru</p>
+                <h2 class="card-title h6 mb-0">Aktivitas System</h2>
+                <p class="card-subtitle small text-muted">Recent operational event log</p>
               </div>
               <div class="card-body">
                 <div class="d-flex flex-column gap-3">
@@ -661,8 +661,8 @@
                       <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#database"/></svg>
                     </div>
                     <div>
-                      <div class="small fw-semibold">Backup Database Otomatis</div>
-                      <div class="text-muted small">Pencadangan harian selesai tanpa kendala (1.2 GB).</div>
+                      <div class="small fw-semibold">Automatic Database Backup</div>
+                      <div class="text-muted small">Daily backup completed without issues (1.2 GB).</div>
                       <div class="text-body-secondary mt-1" style="font-size: 0.6875rem;">15 menit lalu</div>
                     </div>
                   </div>
@@ -673,7 +673,7 @@
                     </div>
                     <div>
                       <div class="small fw-semibold">Audit Keamanan Lolos</div>
-                      <div class="text-muted small">Pengecekan sertifikat SSL & CSP berhasil diperbarui.</div>
+                      <div class="text-muted small">SSL & CSP certificate check updated successfully.</div>
                       <div class="text-body-secondary mt-1" style="font-size: 0.6875rem;">1 jam lalu</div>
                     </div>
                   </div>
@@ -683,8 +683,8 @@
                       <svg class="xa-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#alert-triangle"/></svg>
                     </div>
                     <div>
-                      <div class="small fw-semibold">Peringatan Kuota Penyimpanan</div>
-                      <div class="text-muted small">Penggunaan disk server mencapai 78% dari kapasitas.</div>
+                      <div class="small fw-semibold">Storage Quota Warning</div>
+                      <div class="text-muted small">Server disk usage has reached 78% of capacity.</div>
                       <div class="text-body-secondary mt-1" style="font-size: 0.6875rem;">3 jam lalu</div>
                     </div>
                   </div>
@@ -698,10 +698,10 @@
       <!-- Footer -->
       <footer class="mt-auto py-3 px-4 border-top text-center text-muted small">
         <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-          <span>&copy; 2026 <strong>Xakti Admin</strong>. Dibuat dengan Bootstrap 5 & gaya shadcn.</span>
+          <span>&copy; 2026 <strong>Xakti Admin</strong>. Built with Bootstrap 5 & shadcn styling.</span>
           <div class="d-flex gap-3">
-            <a href="documentation.html" class="text-muted text-decoration-none">Panduan</a>
-            <a href="pages/components.html" class="text-muted text-decoration-none">Komponen</a>
+            <a href="documentation.html" class="text-muted text-decoration-none">Guide</a>
+            <a href="pages/components.html" class="text-muted text-decoration-none">Components</a>
             <a href="pages/blank.html" class="text-muted text-decoration-none">Starter</a>
           </div>
         </div>
@@ -713,43 +713,43 @@
   <div class="offcanvas offcanvas-end xa-customizer" id="xaCustomizer" tabindex="-1" aria-labelledby="xaCustomizerTitle">
     <div class="offcanvas-header">
       <div>
-        <h5 class="offcanvas-title fw-semibold" id="xaCustomizerTitle">Kustomisasi Tema</h5>
-        <p class="text-muted small mb-0">Ubah gaya, warna sidebar, dan aksen</p>
+        <h5 class="offcanvas-title fw-semibold" id="xaCustomizerTitle">Theme Customizer</h5>
+        <p class="text-muted small mb-0">Change the style, sidebar color, and accent</p>
       </div>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <!-- Mode Global -->
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Mode Tampilan</div>
-        <div class="btn-group w-100" role="group" aria-label="Mode Tema">
+        <div class="xa-customizer__section-title">Appearance Mode</div>
+        <div class="btn-group w-100" role="group" aria-label="Theme Mode">
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="light" data-xa-theme-value="light">
-            <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#sun"/></svg> Terang
+            <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#sun"/></svg> Light
           </button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="dark" data-xa-theme-value="dark">
-            <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#moon"/></svg> Gelap
+            <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#moon"/></svg> Dark
           </button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="system" data-xa-theme-value="system">
-            <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#monitor"/></svg> Sistem
+            <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#monitor"/></svg> System
           </button>
         </div>
       </div>
 
-      <!-- Mode Sidebar -->
+      <!-- Sidebar Mode -->
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Mode Sidebar</div>
-        <div class="btn-group w-100" role="group" aria-label="Mode Sidebar">
-          <button type="button" class="btn btn-outline-secondary btn-sm active" data-xa-sidebar-mode-toggle="follow" data-xa-sidebar-mode-value="follow">Ikuti Tema</button>
-          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="light" data-xa-sidebar-mode-value="light">Terang</button>
-          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="dark" data-xa-sidebar-mode-value="dark">Gelap</button>
+        <div class="xa-customizer__section-title">Sidebar Mode</div>
+        <div class="btn-group w-100" role="group" aria-label="Sidebar Mode">
+          <button type="button" class="btn btn-outline-secondary btn-sm active" data-xa-sidebar-mode-toggle="follow" data-xa-sidebar-mode-value="follow">Follow Theme</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="light" data-xa-sidebar-mode-value="light">Light</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="dark" data-xa-sidebar-mode-value="dark">Dark</button>
         </div>
       </div>
 
       <!-- 10 Preset Sidebar -->
       <div class="xa-customizer__section">
         <div class="d-flex align-items-center justify-content-between mb-2">
-          <span class="xa-customizer__section-title mb-0">Preset Sidebar</span>
-          <span class="badge text-bg-secondary">10 Pilihan</span>
+          <span class="xa-customizer__section-title mb-0">Sidebar Presets</span>
+          <span class="badge text-bg-secondary">10 Options</span>
         </div>
         <div class="xa-swatches-grid">
           <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="light">
@@ -787,16 +787,16 @@
 
       <!-- Custom Color Picker -->
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Warna Kustom Sidebar</div>
+        <div class="xa-customizer__section-title">Custom Sidebar Color</div>
         <div class="xa-custom-color-picker">
-          <input type="color" class="xa-color-input" id="xaCustomColorInput" data-xa-sidebar-picker value="#0f172a" aria-label="Pilih warna kustom sidebar">
-          <label for="xaCustomColorInput" class="small text-muted mb-0">Pilih warna bebas (auto-contrast teks otomatis dihitung)</label>
+          <input type="color" class="xa-color-input" id="xaCustomColorInput" data-xa-sidebar-picker value="#0f172a" aria-label="Choose a custom sidebar color">
+          <label for="xaCustomColorInput" class="small text-muted mb-0">Choose any color (text auto-contrast is calculated automatically)</label>
         </div>
       </div>
 
       <!-- Global Accent Color -->
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Warna Aksen Global</div>
+        <div class="xa-customizer__section-title">Global Accent Color</div>
         <div class="d-flex flex-wrap gap-2">
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="zinc">Zinc</button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-accent-value="blue">Blue</button>
@@ -809,7 +809,7 @@
 
       <!-- Radius -->
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Radius Sudut</div>
+        <div class="xa-customizer__section-title">Corner Radius</div>
         <div class="btn-group w-100" role="group" aria-label="Radius">
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0">0</button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.3">0.3</button>
@@ -822,10 +822,10 @@
       <!-- Actions -->
       <div class="xa-customizer__section d-flex gap-2">
         <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" data-xa-reset-customizer>
-          <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#refresh-cw"/></svg> Reset Default
+          <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#refresh-cw"/></svg> Reset to Default
         </button>
         <button type="button" class="btn btn-primary btn-sm flex-fill" data-xa-export-theme>
-          <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#copy"/></svg> Salin JSON
+          <svg class="xa-icon me-1" aria-hidden="true"><use href="assets/icons/sprite.svg#copy"/></svg> Copy JSON
         </button>
       </div>
     </div>

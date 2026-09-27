@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="id" data-bs-theme="light">
+<html lang="en" data-bs-theme="light">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Struktur Project — Xakti Admin</title>
+  <title>Project Structure — Xakti Admin</title>
 
   <script>
     (function () {
@@ -42,10 +42,10 @@
 </head>
 
 <body>
-  <a class="xa-skip-link" href="#main">Lewati ke konten</a>
+  <a class="xa-skip-link" href="#main">Skip to content</a>
 
   <div class="xa-shell">
-    <aside class="xa-sidebar offcanvas-lg offcanvas-start" id="xaSidebar" tabindex="-1" aria-label="Sidebar Navigasi"
+    <aside class="xa-sidebar offcanvas-lg offcanvas-start" id="xaSidebar" tabindex="-1" aria-label="Sidebar Navigation"
       data-xa-sidebar>
       <div class="xa-sidebar__header">
         <a class="xa-sidebar__brand" href="index.html">
@@ -57,12 +57,12 @@
           <span class="xa-sidebar__brand-text">Xakti Admin</span>
         </a>
         <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#xaSidebar"
-          aria-label="Tutup"></button>
+          aria-label="Close"></button>
       </div>
 
-      <nav class="xa-sidebar__nav" aria-label="Navigasi Utama">
+      <nav class="xa-sidebar__nav" aria-label="Main Navigation">
         <div class="xa-sidebar__section">
-          <p class="xa-sidebar__label">Utama</p>
+          <p class="xa-sidebar__label">Main</p>
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="index.html">
@@ -85,7 +85,7 @@
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#file-text" />
                 </svg>
-                <span class="xa-sidebar__text">Formulir</span>
+                <span class="xa-sidebar__text">Forms</span>
               </a>
             </li>
           </ul>
@@ -106,21 +106,21 @@
                 </svg>
               </button>
               <ul class="nav flex-column collapse" id="menuPlugins">
-                <li class="nav-item"><a class="nav-link" href="pages/plugin-examples.html">Contoh penggunaan</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/plugin-examples.html">Usage Examples</a></li>
               </ul>
             </li>
           </ul>
         </div>
 
         <div class="xa-sidebar__section">
-          <p class="xa-sidebar__label">Tampilan & Komponen</p>
+          <p class="xa-sidebar__label">Appearance & Components</p>
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="pages/components.html">
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#blocks" />
                 </svg>
-                <span class="xa-sidebar__text">Komponen (UI)</span>
+                <span class="xa-sidebar__text">Components (UI)</span>
               </a>
             </li>
             <li class="nav-item">
@@ -128,7 +128,7 @@
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#settings" />
                 </svg>
-                <span class="xa-sidebar__text">Pengaturan</span>
+                <span class="xa-sidebar__text">Settings</span>
               </a>
             </li>
             <li class="nav-item">
@@ -136,21 +136,21 @@
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#user" />
                 </svg>
-                <span class="xa-sidebar__text">Profil Saya</span>
+                <span class="xa-sidebar__text">My Profile</span>
               </a>
             </li>
           </ul>
         </div>
 
         <div class="xa-sidebar__section">
-          <p class="xa-sidebar__label">Bantuan</p>
+          <p class="xa-sidebar__label">Help</p>
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="documentation.html">
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#file-text" />
                 </svg>
-                <span class="xa-sidebar__text">Dokumentasi</span>
+                <span class="xa-sidebar__text">Documentation</span>
               </a>
             </li>
             <li class="nav-item">
@@ -158,14 +158,14 @@
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#folder" />
                 </svg>
-                <span class="xa-sidebar__text">Struktur Project</span>
+                <span class="xa-sidebar__text">Project Structure</span>
               </a>
             </li>
           </ul>
         </div>
 
         <div class="xa-sidebar__section">
-          <p class="xa-sidebar__label">Halaman Lainnya</p>
+          <p class="xa-sidebar__label">Other Pages</p>
           <ul class="nav flex-column">
             <li class="nav-item">
               <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse"
@@ -173,7 +173,7 @@
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#lock" />
                 </svg>
-                <span class="xa-sidebar__text">Autentikasi</span>
+                <span class="xa-sidebar__text">Authentication</span>
                 <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#chevron-right" />
                 </svg>
@@ -182,18 +182,18 @@
                 <li class="nav-item">
                   <button class="nav-link w-100 text-start" type="button" data-bs-toggle="collapse"
                     data-bs-target="#menuLogin" aria-expanded="false" aria-controls="menuLogin">
-                    <span class="xa-sidebar__text">Masuk (Login)</span>
+                    <span class="xa-sidebar__text">Sign In (Login)</span>
                     <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true">
                       <use href="assets/icons/sprite.svg#chevron-right" />
                     </svg>
                   </button>
                   <ul class="nav flex-column collapse" id="menuLogin">
-                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html">Dengan Email</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html#otp">Dengan OTP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html">With Email</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/auth/login.html#otp">With OTP</a></li>
                   </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="pages/auth/register.html">Daftar (Register)</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/auth/forgot-password.html">Lupa Kata Sandi</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/auth/register.html">Sign Up (Register)</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/auth/forgot-password.html">Forgot Password</a></li>
               </ul>
             </li>
 
@@ -203,14 +203,14 @@
                 <svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#shield-alert" />
                 </svg>
-                <span class="xa-sidebar__text">Halaman Error</span>
+                <span class="xa-sidebar__text">Error Pages</span>
                 <svg class="xa-icon xa-sidebar__chevron ms-auto" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#chevron-right" />
                 </svg>
               </button>
               <ul class="nav flex-column collapse" id="menuErrors">
-                <li class="nav-item"><a class="nav-link" href="pages/errors/403.html">403 Dilarang</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/errors/404.html">404 Tidak Ditemukan</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/errors/403.html">403 Forbidden</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/errors/404.html">404 Not Found</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/errors/500.html">500 Server Error</a></li>
               </ul>
             </li>
@@ -242,17 +242,17 @@
           <ul class="dropdown-menu dropdown-menu-end shadow-sm">
             <li><a class="dropdown-item" href="pages/profile.html"><svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#user" />
-                </svg> Profil</a></li>
+                </svg> Profile</a></li>
             <li><a class="dropdown-item" href="pages/settings.html"><svg class="xa-icon" aria-hidden="true">
                   <use href="assets/icons/sprite.svg#settings" />
-                </svg> Pengaturan</a></li>
+                </svg> Settings</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item text-danger" href="pages/auth/login.html"><svg class="xa-icon"
                   aria-hidden="true">
                   <use href="assets/icons/sprite.svg#log-out" />
-                </svg> Keluar</a></li>
+                </svg> Sign Out</a></li>
           </ul>
         </div>
       </div>
@@ -262,48 +262,48 @@
       <header class="navbar xa-topbar">
         <div class="xa-topbar__left">
           <button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle
-            aria-label="Buka Sidebar">
+            aria-label="Open Sidebar">
             <svg class="xa-icon" aria-hidden="true">
               <use href="assets/icons/sprite.svg#menu" />
             </svg>
           </button>
           <button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle
-            aria-label="Lipat Sidebar (Ctrl+B)">
+            aria-label="Collapse Sidebar (Ctrl+B)">
             <svg class="xa-icon" aria-hidden="true">
               <use href="assets/icons/sprite.svg#panel-left" />
             </svg>
           </button>
           <nav aria-label="Breadcrumb" class="d-none d-sm-block">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Aplikasi</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Struktur Project</li>
+              <li class="breadcrumb-item"><a href="index.html">Application</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Project Structure</li>
             </ol>
           </nav>
         </div>
 
         <div class="xa-topbar__right">
           <button class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex align-items-center gap-2 text-muted"
-            type="button" data-xa-command-open aria-label="Cari Cepat">
+            type="button" data-xa-command-open aria-label="Quick Search">
             <svg class="xa-icon" aria-hidden="true">
               <use href="assets/icons/sprite.svg#search" />
             </svg>
-            <span>Cari apa saja...</span>
+            <span>Search anything...</span>
             <kbd class="badge bg-secondary-subtle text-secondary-emphasis border">Ctrl K</kbd>
           </button>
-          <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Ganti Tema">
+          <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Toggle Theme">
             <svg class="xa-icon" aria-hidden="true">
               <use href="assets/icons/sprite.svg#sun" />
             </svg>
           </button>
           <button class="btn btn-ghost btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#xaCustomizer"
-            aria-label="Kustomisasi Tema">
+            aria-label="Theme Customizer">
             <svg class="xa-icon" aria-hidden="true">
               <use href="assets/icons/sprite.svg#palette" />
             </svg>
           </button>
           <div class="dropdown">
             <button class="btn btn-ghost p-0 rounded-circle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false" aria-label="Menu Akun">
+              aria-expanded="false" aria-label="Account Menu">
               <div class="xa-avatar xa-avatar--sm">JD</div>
             </button>
             <ul class="dropdown-menu dropdown-menu-end shadow-sm">
@@ -312,17 +312,17 @@
               </li>
               <li><a class="dropdown-item" href="pages/profile.html"><svg class="xa-icon" aria-hidden="true">
                     <use href="assets/icons/sprite.svg#user" />
-                  </svg> Profil</a></li>
+                  </svg> Profile</a></li>
               <li><a class="dropdown-item" href="pages/settings.html"><svg class="xa-icon" aria-hidden="true">
                     <use href="assets/icons/sprite.svg#settings" />
-                  </svg> Pengaturan</a></li>
+                  </svg> Settings</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item text-danger" href="pages/auth/login.html"><svg class="xa-icon"
                     aria-hidden="true">
                     <use href="assets/icons/sprite.svg#log-out" />
-                  </svg> Keluar</a></li>
+                  </svg> Sign Out</a></li>
             </ul>
           </div>
         </div>
@@ -331,8 +331,8 @@
       <main id="main" class="xa-content" tabindex="-1">
         <div class="xa-page-header">
           <div>
-            <h1 class="xa-page-title">Struktur Project</h1>
-            <p class="xa-page-description">Peta folder utama dan ukuran aset CSS serta JavaScript yang digunakan oleh
+            <h1 class="xa-page-title">Project Structure</h1>
+            <p class="xa-page-description">Map of the main folders and the CSS and JavaScript asset sizes used by
               Xakti Admin.</p>
           </div>
         </div>
@@ -340,23 +340,23 @@
         <section class="card mb-4">
           <div class="card-body">
             <pre class="bg-body-tertiary border rounded p-3 mb-0"><code>xakti-admin-template/
-├── frontend/                         # Aplikasi static yang dijalankan
+├── frontend/                         # Runnable static application
 │   ├── index.html                    # Dashboard entrypoint
-│   ├── documentation.html            # Dokumentasi penggunaan
-│   ├── project-structure.html        # Halaman struktur project dan ukuran aset
-│   ├── pages/                        # Template halaman aplikasi
+│   ├── documentation.html            # Usage documentation
+│   ├── project-structure.html        # Project structure and asset size page
+│   ├── pages/                        # Application page templates
 │   │   ├── auth/                     # Login, register, forgot password
-│   │   └── errors/                   # Halaman error 403, 404, 500
+│   │   └── errors/                   # Error pages 403, 404, 500
 │   ├── assets/
-│   │   ├── css/                     # Token, theme, layout, komponen, plugin
-│   │   ├── js/                      # Entry module, modules, dan utils
-│   │   ├── icons/                   # SVG sprite Lucide lokal
-│   │   ├── fonts/                   # Font Inter lokal
-│   │   └── vendor/                  # Bootstrap dan Chart.js lokal
+│   │   ├── css/                     # Tokens, theme, layout, components, plugins
+│   │   ├── js/                      # Entry module, modules, and utilities
+│   │   ├── icons/                   # Local Lucide SVG sprite
+│   │   ├── fonts/                   # Local Inter font
+│   │   └── vendor/                  # Local Bootstrap and Chart.js
 │   ├── CHANGELOG.md
 │   └── README.md
-├── docs/                            # PRD, rules, dan dokumentasi pengembangan
-└── AGENTS.md                        # Instruksi untuk coding agent</code></pre>
+├── docs/                            # PRD, rules, and development documentation
+└── AGENTS.md                        # Instructions for coding agents</code></pre>
           </div>
         </section>
 
@@ -364,14 +364,14 @@
           <div class="col-12 col-xl-6">
             <section class="card h-100">
               <div class="card-header d-flex justify-content-between align-items-center">
-                <h2 class="h5 mb-0">Ukuran file CSS</h2><span class="badge text-bg-secondary">85.01 KB</span>
+                <h2 class="h5 mb-0">CSS File Sizes</h2><span class="badge text-bg-secondary">85.01 KB</span>
               </div>
               <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                   <thead>
                     <tr>
                       <th scope="col">File</th>
-                      <th scope="col" class="text-end">Ukuran</th>
+                      <th scope="col" class="text-end">Size</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -411,14 +411,14 @@
           <div class="col-12 col-xl-6">
             <section class="card h-100">
               <div class="card-header d-flex justify-content-between align-items-center">
-                <h2 class="h5 mb-0">Ukuran file JavaScript</h2><span class="badge text-bg-secondary">43.10 KB</span>
+                <h2 class="h5 mb-0">JavaScript File Sizes</h2><span class="badge text-bg-secondary">43.10 KB</span>
               </div>
               <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                   <thead>
                     <tr>
                       <th scope="col">File</th>
-                      <th scope="col" class="text-end">Ukuran</th>
+                      <th scope="col" class="text-end">Size</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -427,11 +427,11 @@
                       <td class="text-end">1.13 KB</td>
                     </tr>
                     <tr>
-                      <td><code>modules/*.js</code> <span class="text-body-secondary small">(7 file)</span></td>
+                      <td><code>modules/*.js</code> <span class="text-body-secondary small">(7 files)</span></td>
                       <td class="text-end">39.67 KB</td>
                     </tr>
                     <tr>
-                      <td><code>utils/*.js</code> <span class="text-body-secondary small">(2 file)</span></td>
+                      <td><code>utils/*.js</code> <span class="text-body-secondary small">(2 files)</span></td>
                       <td class="text-end">3.46 KB</td>
                     </tr>
                     <tr>
@@ -447,25 +447,25 @@
 
         <section class="card">
           <div class="card-header">
-            <h2 class="h5 mb-1">Entry point dan alur aset</h2>
-            <p class="text-body-secondary small mb-0">Gunakan file sesuai cara menjalankan aplikasi.</p>
+            <h2 class="h5 mb-1">Entry Points and Asset Flow</h2>
+            <p class="text-body-secondary small mb-0">Use the appropriate files depending on how the application is served.</p>
           </div>
           <div class="card-body">
             <div class="row g-3">
               <div class="col-12 col-md-4">
-                <h3 class="h6">Server lokal</h3>
-                <p class="small mb-0"><code>index.html</code> memuat Bootstrap, <code>app.min.css</code>, lalu Bootstrap
-                  bundle dan <code>app.js</code> sebagai ES Module.</p>
+                <h3 class="h6">Local HTTP Server</h3>
+                <p class="small mb-0"><code>index.html</code> loads Bootstrap, <code>app.min.css</code>, then the Bootstrap
+                  bundle and <code>app.js</code> as an ES Module.</p>
               </div>
               <div class="col-12 col-md-4">
-                <h3 class="h6">Buka file langsung</h3>
-                <p class="small mb-0">Browser memakai <code>app.bundle.js</code> karena ES Module memiliki batasan
-                  keamanan pada protokol <code>file://</code>.</p>
+                <h3 class="h6">Direct File Access</h3>
+                <p class="small mb-0">The browser uses <code>app.bundle.js</code> because ES Modules have security restrictions
+                  under the <code>file://</code> protocol.</p>
               </div>
               <div class="col-12 col-md-4">
-                <h3 class="h6">CSS sumber</h3>
-                <p class="small mb-0"><code>app.css</code> mengimpor CSS sumber. Halaman yang disajikan memuat
-                  <code>app.min.css</code>, sehingga bundle perlu disinkronkan setelah perubahan CSS.
+                <h3 class="h6">CSS Sources</h3>
+                <p class="small mb-0"><code>app.css</code> imports the source CSS. Served pages load
+                  <code>app.min.css</code>, so the bundle must be synchronized after CSS changes.
                 </p>
               </div>
             </div>
@@ -476,10 +476,10 @@
 
       <footer class="mt-auto py-3 px-4 border-top text-center text-muted small">
         <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-          <span>&copy; 2026 <strong>Xakti Admin</strong>. Dibuat dengan Bootstrap 5 & gaya shadcn.</span>
+          <span>&copy; 2026 <strong>Xakti Admin</strong>. Built with Bootstrap 5 & shadcn styling.</span>
           <div class="d-flex gap-3">
-            <a href="documentation.html" class="text-muted text-decoration-none">Panduan</a>
-            <a href="pages/components.html" class="text-muted text-decoration-none">Komponen</a>
+            <a href="documentation.html" class="text-muted text-decoration-none">Guide</a>
+            <a href="pages/components.html" class="text-muted text-decoration-none">Components</a>
             <a href="pages/blank.html" class="text-muted text-decoration-none">Starter</a>
           </div>
         </div>
@@ -492,38 +492,38 @@
     aria-labelledby="xaCustomizerTitle">
     <div class="offcanvas-header">
       <div>
-        <h5 class="offcanvas-title fw-semibold" id="xaCustomizerTitle">Kustomisasi Tema</h5>
-        <p class="text-muted small mb-0">Ubah gaya, warna sidebar, dan aksen</p>
+        <h5 class="offcanvas-title fw-semibold" id="xaCustomizerTitle">Theme Customizer</h5>
+        <p class="text-muted small mb-0">Change the style, sidebar color, and accent</p>
       </div>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Mode Tampilan</div>
+        <div class="xa-customizer__section-title">Appearance Mode</div>
         <div class="btn-group w-100" role="group">
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="light"
-            data-xa-theme-value="light">Terang</button>
+            data-xa-theme-value="light">Light</button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="dark"
-            data-xa-theme-value="dark">Gelap</button>
+            data-xa-theme-value="dark">Dark</button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-theme-toggle="system"
-            data-xa-theme-value="system">Sistem</button>
+            data-xa-theme-value="system">System</button>
         </div>
       </div>
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Mode Sidebar</div>
-        <div class="btn-group w-100" role="group" aria-label="Mode Sidebar">
+        <div class="xa-customizer__section-title">Sidebar Mode</div>
+        <div class="btn-group w-100" role="group" aria-label="Sidebar Mode">
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="follow"
-            data-xa-sidebar-mode-value="follow">Ikuti Tema</button>
+            data-xa-sidebar-mode-value="follow">Follow Theme</button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="light"
-            data-xa-sidebar-mode-value="light">Terang</button>
+            data-xa-sidebar-mode-value="light">Light</button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-xa-sidebar-mode-toggle="dark"
-            data-xa-sidebar-mode-value="dark">Gelap</button>
+            data-xa-sidebar-mode-value="dark">Dark</button>
         </div>
       </div>
       <div class="xa-customizer__section">
         <div class="d-flex align-items-center justify-content-between mb-2"><span
-            class="xa-customizer__section-title mb-0">Preset Sidebar</span><span class="badge text-bg-secondary">10
-            Pilihan</span></div>
+            class="xa-customizer__section-title mb-0">Sidebar Presets</span><span class="badge text-bg-secondary">10
+            Options</span></div>
         <div class="xa-swatches-grid">
           <button type="button" class="xa-swatch-btn" data-xa-sidebar-preset="light"><span class="xa-swatch-circle"
               style="background-color: #fafafa;"></span> Light</button>
@@ -548,14 +548,14 @@
         </div>
       </div>
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Warna Kustom Sidebar</div>
+        <div class="xa-customizer__section-title">Custom Sidebar Color</div>
         <div class="xa-custom-color-picker"><input type="color" class="xa-color-input" id="xaColorPickerDocumentation"
-            data-xa-sidebar-picker value="#0f172a" aria-label="Pilih warna kustom sidebar"><label
-            for="xaColorPickerDocumentation" class="small text-muted mb-0">Pilih warna bebas (auto-contrast teks
-            otomatis dihitung)</label></div>
+            data-xa-sidebar-picker value="#0f172a" aria-label="Choose a custom sidebar color"><label
+            for="xaColorPickerDocumentation" class="small text-muted mb-0">Choose any color (text auto-contrast
+            is calculated automatically)</label></div>
       </div>
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Warna Aksen Global</div>
+        <div class="xa-customizer__section-title">Global Accent Color</div>
         <div class="d-flex flex-wrap gap-2"><button type="button" class="btn btn-outline-secondary btn-sm"
             data-xa-accent-value="zinc">Zinc</button><button type="button" class="btn btn-outline-secondary btn-sm"
             data-xa-accent-value="blue">Blue</button><button type="button" class="btn btn-outline-secondary btn-sm"
@@ -565,7 +565,7 @@
             data-xa-accent-value="violet">Violet</button></div>
       </div>
       <div class="xa-customizer__section">
-        <div class="xa-customizer__section-title">Radius Sudut</div>
+        <div class="xa-customizer__section-title">Corner Radius</div>
         <div class="btn-group w-100" role="group" aria-label="Radius"><button type="button"
             class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0">0</button><button type="button"
             class="btn btn-outline-secondary btn-sm" data-xa-radius-value="0.3">0.3</button><button type="button"
@@ -574,9 +574,8 @@
             class="btn btn-outline-secondary btn-sm" data-xa-radius-value="1">1.0</button></div>
       </div>
       <div class="xa-customizer__section d-flex gap-2">
-        <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" data-xa-reset-customizer>Reset
-          Default</button>
-        <button type="button" class="btn btn-primary btn-sm flex-fill" data-xa-export-theme>Salin JSON</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" data-xa-reset-customizer>Reset to Default</button>
+        <button type="button" class="btn btn-primary btn-sm flex-fill" data-xa-export-theme>Copy JSON</button>
       </div>
     </div>
   </div>

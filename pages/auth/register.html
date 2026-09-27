@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="id" data-bs-theme="light">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daftar Akun — Xakti Admin</title>
+  <title>Create Account — Xakti Admin</title>
 
   <script>
     (function () {
@@ -26,7 +26,7 @@
 </head>
 <body class="bg-body-tertiary d-flex align-items-center justify-content-center min-vh-100 p-3 position-relative">
   <div class="position-absolute top-0 end-0 p-3">
-    <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Ganti Tema">
+    <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Toggle Theme">
       <svg class="xa-icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#sun"/></svg>
     </button>
   </div>
@@ -36,41 +36,41 @@
       <div class="d-inline-flex align-items-center justify-content-center p-2 rounded bg-primary text-primary-foreground mb-2">
         <svg class="xa-icon xa-icon--lg" aria-hidden="true"><use href="../../assets/icons/sprite.svg#sparkles"/></svg>
       </div>
-      <h1 class="h4 fw-bold mb-1">Buat Akun Baru</h1>
-      <p class="text-muted small">Mulai kelola operasional dashboard Anda bersama Xakti</p>
+      <h1 class="h4 fw-bold mb-1">Create a New Account</h1>
+      <p class="text-muted small">Start managing your dashboard operations with Xakti</p>
     </div>
 
     <div class="card shadow-sm border">
       <div class="card-body p-4">
         <form onsubmit="event.preventDefault(); window.location.href='login.html';">
           <div class="mb-3">
-            <label for="regName" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="regName" required placeholder="Contoh: Budi Santoso">
+            <label for="regName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="regName" required placeholder="e.g. John Doe">
           </div>
 
           <div class="mb-3">
-            <label for="regEmail" class="form-label">Alamat Email</label>
-            <input type="email" class="form-control" id="regEmail" required placeholder="nama@perusahaan.com">
+            <label for="regEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="regEmail" required placeholder="name@company.com">
           </div>
 
           <div class="mb-3">
-            <label for="regPassword" class="form-label">Kata Sandi</label>
-            <input type="password" class="form-control" id="regPassword" required placeholder="Minimal 8 karakter">
+            <label for="regPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="regPassword" required placeholder="At least 8 characters">
           </div>
 
           <div class="form-check mb-4">
             <input class="form-check-input" type="checkbox" id="termsCheck" required>
             <label class="form-check-label small" for="termsCheck">
-              Saya menyetujui <a href="#" class="text-decoration-none">Syarat & Ketentuan</a> serta Kebijakan Privasi.
+              I agree to the <a href="#" class="text-decoration-none">Terms & Conditions</a> and Privacy Policy.
             </label>
           </div>
 
           <button type="submit" class="btn btn-primary w-100 mb-3">
-            Daftar Sekarang
+            Sign Up Now
           </button>
 
           <div class="text-center text-muted small">
-            Sudah memiliki akun? <a href="login.html" class="fw-semibold text-decoration-none">Masuk di sini</a>
+            Already have an account? <a href="login.html" class="fw-semibold text-decoration-none">Sign in here</a>
           </div>
         </form>
       </div>
@@ -79,7 +79,7 @@
     <div class="text-center mt-4">
       <a href="../../index.html" class="text-muted small text-decoration-none d-inline-flex align-items-center gap-1">
         <svg class="xa-icon xa-icon--sm" aria-hidden="true"><use href="../../assets/icons/sprite.svg#chevron-left"/></svg>
-        Kembali ke Beranda
+        Back to Home
       </a>
     </div>
   </div>

@@ -584,7 +584,7 @@ function importConfig(jsonString) {
     }
     return true;
   } catch (e) {
-    console.error('Import failed', e);
+    console.error('Importt failed', e);
     return false;
   }
 }
@@ -631,11 +631,11 @@ function init(root = document) {
       navigator.clipboard.writeText(json).then(() => {
         if (window.XaktiAdmin && window.XaktiAdmin.toast) {
           window.XaktiAdmin.toast.show({
-            title: 'Konfigurasi Disalin',
-            message: 'JSON tema berhasil disalin ke clipboard.'
+            title: 'Configuration Copied',
+            message: 'Theme JSON copied to clipboard.'
           });
         } else {
-          alert('Konfigurasi disalin ke clipboard:\n' + json);
+          alert('Configuration copied to clipboard:\n' + json);
         }
       });
     }
@@ -861,7 +861,7 @@ class DataTable {
     if (visibleRows.length === 0) {
       const colSpan = this.thead.querySelectorAll('th').length || 5;
       const tr = document.createElement('tr');
-      tr.innerHTML = `<td colspan="${colSpan}" class="text-center py-5 text-muted">Tidak ada data ditemukan</td>`;
+      tr.innerHTML = `<td colspan="${colSpan}" class="text-center py-5 text-muted">No data found</td>`;
       fragment.appendChild(tr);
     } else {
       visibleRows.forEach(row => {
@@ -875,9 +875,9 @@ class DataTable {
     // Update info
     if (this.infoContainer) {
       if (total === 0) {
-        this.infoContainer.textContent = 'Menampilkan 0 data';
+        this.infoContainer.textContent = 'Showing 0 records';
       } else {
-        this.infoContainer.textContent = `Menampilkan ${startIdx + 1}–${endIdx} dari ${total} data`;
+        this.infoContainer.textContent = `Showing ${startIdx + 1}–${endIdx} of ${total} data`;
       }
     }
 
@@ -896,7 +896,7 @@ class DataTable {
 
     // Previous
     html += `<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
-      <button class="page-link" type="button" data-xa-page="${this.currentPage - 1}" aria-label="Sebelumnya">«</button>
+      <button class="page-link" type="button" data-xa-page="${this.currentPage - 1}" aria-label="Previous">«</button>
     </li>`;
 
     // Pages numbers with ellipsis
@@ -912,7 +912,7 @@ class DataTable {
 
     // Next
     html += `<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
-      <button class="page-link" type="button" data-xa-page="${this.currentPage + 1}" aria-label="Berikutnya">»</button>
+      <button class="page-link" type="button" data-xa-page="${this.currentPage + 1}" aria-label="Next">»</button>
     </li>`;
 
     html += '</ul>';
@@ -1005,9 +1005,9 @@ function show({ title = '', message = '', variant = 'default', delay = 4000 } = 
       <svg class="xa-icon me-2 text-primary" aria-hidden="true">
         <use href="${document.baseURI.includes('/pages/') ? '../' : ''}assets/icons/sprite.svg#${iconName}"/>
       </svg>
-      <strong class="me-auto">${title || 'Notifikasi'}</strong>
-      <small class="text-body-secondary">Baru saja</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      <strong class="me-auto">${title || 'Notifications'}</strong>
+      <small class="text-body-secondary">New saja</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
       ${message}
@@ -1036,7 +1036,7 @@ function init() {
     const trigger = e.target.closest('[data-xa-toast]');
     if (trigger) {
       const title = trigger.getAttribute('data-xa-toast-title') || 'Info';
-      const message = trigger.getAttribute('data-xa-toast-message') || 'Aksi berhasil dijalankan.';
+      const message = trigger.getAttribute('data-xa-toast-message') || 'Action completed successfully.';
       const variant = trigger.getAttribute('data-xa-toast-variant') || 'default';
       show({ title, message, variant });
     }
@@ -1064,17 +1064,17 @@ let commandModal = null;
 let keyListener = null;
 
 const COMMAND_ITEMS = [
-  { id: 'dash', title: 'Dashboard', category: 'Navigasi', href: 'index.html', icon: 'layout-dashboard' },
-  { id: 'dt', title: 'Data Table', category: 'Navigasi', href: 'pages/data-table.html', icon: 'table' },
-  { id: 'forms', title: 'Formulir', category: 'Navigasi', href: 'pages/forms.html', icon: 'file-text' },
-  { id: 'comp', title: 'Komponen (Styleguide)', category: 'Navigasi', href: 'pages/components.html', icon: 'blocks' },
-  { id: 'sett', title: 'Pengaturan', category: 'Navigasi', href: 'pages/settings.html', icon: 'settings' },
-  { id: 'prof', title: 'Profil Saya', category: 'Navigasi', href: 'pages/profile.html', icon: 'user' },
-  { id: 'blank', title: 'Starter / Blank Page', category: 'Navigasi', href: 'pages/blank.html', icon: 'file' },
-  { id: 'login', title: 'Halaman Login', category: 'Autentikasi', href: 'pages/auth/login.html', icon: 'log-in' },
-  { id: 'reg', title: 'Halaman Registrasi', category: 'Autentikasi', href: 'pages/auth/register.html', icon: 'user-plus' },
-  { id: 'toggle-theme', title: 'Ganti Mode Gelap / Terang', category: 'Aksi', action: 'toggle-theme', icon: 'sun' },
-  { id: 'toggle-sidebar', title: 'Lipat / Buka Sidebar', category: 'Aksi', action: 'toggle-sidebar', icon: 'panel-left' }
+  { id: 'dash', title: 'Dashboard', category: 'Navigation', href: 'index.html', icon: 'layout-dashboard' },
+  { id: 'dt', title: 'Data Table', category: 'Navigation', href: 'pages/data-table.html', icon: 'table' },
+  { id: 'forms', title: 'Forms', category: 'Navigation', href: 'pages/forms.html', icon: 'file-text' },
+  { id: 'comp', title: 'Components (Styleguide)', category: 'Navigation', href: 'pages/components.html', icon: 'blocks' },
+  { id: 'sett', title: 'Settings', category: 'Navigation', href: 'pages/settings.html', icon: 'settings' },
+  { id: 'prof', title: 'My Profile', category: 'Navigation', href: 'pages/profile.html', icon: 'user' },
+  { id: 'blank', title: 'Starter / Blank Page', category: 'Navigation', href: 'pages/blank.html', icon: 'file' },
+  { id: 'login', title: 'Login Page', category: 'Authentication', href: 'pages/auth/login.html', icon: 'log-in' },
+  { id: 'reg', title: 'Registration Page', category: 'Authentication', href: 'pages/auth/register.html', icon: 'user-plus' },
+  { id: 'toggle-theme', title: 'Toggle Dark / Light Mode', category: 'Actions', action: 'toggle-theme', icon: 'sun' },
+  { id: 'toggle-sidebar', title: 'Collapse / Expand Sidebar', category: 'Actions', action: 'toggle-sidebar', icon: 'panel-left' }
 ];
 
 function open() {
@@ -1118,7 +1118,7 @@ function createModalElement() {
           <svg class="xa-icon text-muted" aria-hidden="true">
             <use href="${prefix}assets/icons/sprite.svg#search"/>
           </svg>
-          <input type="text" class="xa-command__search-input" id="xaCommandInput" placeholder="Ketik perintah atau cari halaman..." autocomplete="off">
+          <input type="text" class="xa-command__search-input" id="xaCommandInput" placeholder="Type a command or search for a page..." autocomplete="off">
           <span class="xa-command__shortcut">ESC</span>
         </div>
         <div class="xa-command__list" id="xaCommandList">
@@ -1138,7 +1138,7 @@ function createModalElement() {
     );
 
     if (filtered.length === 0) {
-      list.innerHTML = `<div class="text-center py-4 text-muted small">Tidak ada hasil ditemukan</div>`;
+      list.innerHTML = `<div class="text-center py-4 text-muted small">No results found</div>`;
       return;
     }
 

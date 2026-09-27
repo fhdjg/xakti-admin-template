@@ -174,7 +174,7 @@ export class DataTable {
     if (visibleRows.length === 0) {
       const colSpan = this.thead.querySelectorAll('th').length || 5;
       const tr = document.createElement('tr');
-      tr.innerHTML = `<td colspan="${colSpan}" class="text-center py-5 text-muted">Tidak ada data ditemukan</td>`;
+      tr.innerHTML = `<td colspan="${colSpan}" class="text-center py-5 text-muted">No data found</td>`;
       fragment.appendChild(tr);
     } else {
       visibleRows.forEach(row => {
@@ -188,9 +188,9 @@ export class DataTable {
     // Update info
     if (this.infoContainer) {
       if (total === 0) {
-        this.infoContainer.textContent = 'Menampilkan 0 data';
+        this.infoContainer.textContent = 'Showing 0 records';
       } else {
-        this.infoContainer.textContent = `Menampilkan ${startIdx + 1}–${endIdx} dari ${total} data`;
+        this.infoContainer.textContent = `Showing ${startIdx + 1}–${endIdx} of ${total} data`;
       }
     }
 
@@ -209,7 +209,7 @@ export class DataTable {
 
     // Previous
     html += `<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
-      <button class="page-link" type="button" data-xa-page="${this.currentPage - 1}" aria-label="Sebelumnya">«</button>
+      <button class="page-link" type="button" data-xa-page="${this.currentPage - 1}" aria-label="Previous">«</button>
     </li>`;
 
     // Pages numbers with ellipsis
@@ -225,7 +225,7 @@ export class DataTable {
 
     // Next
     html += `<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
-      <button class="page-link" type="button" data-xa-page="${this.currentPage + 1}" aria-label="Berikutnya">»</button>
+      <button class="page-link" type="button" data-xa-page="${this.currentPage + 1}" aria-label="Next">»</button>
     </li>`;
 
     html += '</ul>';

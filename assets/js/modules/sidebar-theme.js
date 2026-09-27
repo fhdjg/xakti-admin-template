@@ -172,7 +172,7 @@ export function importConfig(jsonString) {
     }
     return true;
   } catch (e) {
-    console.error('Import failed', e);
+    console.error('Importt failed', e);
     return false;
   }
 }
@@ -219,11 +219,11 @@ export function init(root = document) {
       navigator.clipboard.writeText(json).then(() => {
         if (window.XaktiAdmin && window.XaktiAdmin.toast) {
           window.XaktiAdmin.toast.show({
-            title: 'Konfigurasi Disalin',
-            message: 'JSON tema berhasil disalin ke clipboard.'
+            title: 'Configuration Copied',
+            message: 'Theme JSON copied to clipboard.'
           });
         } else {
-          alert('Konfigurasi disalin ke clipboard:\n' + json);
+          alert('Configuration copied to clipboard:\n' + json);
         }
       });
     }

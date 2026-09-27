@@ -4,6 +4,17 @@ Semua perubahan pada proyek **Xakti Admin** dicatat dalam berkas ini. Format men
 
 ## [Unreleased]
 
+### Changed
+- **README Localization & Default Language**: Translated `frontend/README.md` into English as the primary default repository guide, and created `frontend/README.id.md` to preserve the complete Indonesian documentation with cross-language navigation links.
+- **Project Structure Language**: Translated remaining Indonesian text in `project-structure.html` into English, including directory tree annotations, CSS/JS file size table headers and labels, entry point & asset flow guidance cards, and customizer controls.
+- **Pages Interface Language**: Fully translated all remaining Indonesian labels, form placeholders, table headers, error pages (403, 404, 500), profile statistics, project descriptions, session history, and customizer controls in `frontend/pages/` into English for a unified international template experience.
+- **UI Language**: Translated user-facing text across dashboard pages, forms, authentication, settings, profile, data table, component gallery, plugin examples, documentation, and interactive JavaScript messages to English. Dummy names were preserved.
+- **Documentation Language**: Translated the remaining Indonesian labels and descriptions in `documentation.html`, including local development, architecture, page structure, public API, navigation, and customizer text.
+- **Forms Language**: Translated the remaining Indonesian labels and helper text in `pages/forms.html`, including available username, promotional coupon code, supporting file upload, profile fields, navigation, and customizer controls.
+- **Sidebar Language**: Translated remaining Indonesian sidebar labels and submenu items across all frontend HTML pages, including help, usage examples, email/OTP sign-in, error links, application breadcrumbs, and sidebar controls; updated page language attributes to `en`.
+- **Components Language**: Translated remaining Indonesian labels and demo text in `pages/components.html`, including buttons, tabs, empty states, interactive triggers, sidebar color guidance, and customizer controls.
+- **Settings Language**: Translated remaining Indonesian labels, helper text, tab names, profile fields, notification copy, password fields, and customizer text in `pages/settings.html`.
+
 ### Ditambahkan
 - **README**: Menyesuaikan panduan menjalankan aplikasi, struktur folder, ukuran aset terbaru, serta tautan ke halaman dokumentasi dan struktur project.
 - **Halaman Struktur Project**: Menambahkan `project-structure.html` dengan peta folder aplikasi, ukuran file CSS/JavaScript, entry point, dan alur pemuatan aset; halaman ini juga tersedia dari sidebar.

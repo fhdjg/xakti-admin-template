@@ -7,17 +7,17 @@ let commandModal = null;
 let keyListener = null;
 
 export const COMMAND_ITEMS = [
-  { id: 'dash', title: 'Dashboard', category: 'Navigasi', href: 'index.html', icon: 'layout-dashboard' },
-  { id: 'dt', title: 'Data Table', category: 'Navigasi', href: 'pages/data-table.html', icon: 'table' },
-  { id: 'forms', title: 'Formulir', category: 'Navigasi', href: 'pages/forms.html', icon: 'file-text' },
-  { id: 'comp', title: 'Komponen (Styleguide)', category: 'Navigasi', href: 'pages/components.html', icon: 'blocks' },
-  { id: 'sett', title: 'Pengaturan', category: 'Navigasi', href: 'pages/settings.html', icon: 'settings' },
-  { id: 'prof', title: 'Profil Saya', category: 'Navigasi', href: 'pages/profile.html', icon: 'user' },
-  { id: 'blank', title: 'Starter / Blank Page', category: 'Navigasi', href: 'pages/blank.html', icon: 'file' },
-  { id: 'login', title: 'Halaman Login', category: 'Autentikasi', href: 'pages/auth/login.html', icon: 'log-in' },
-  { id: 'reg', title: 'Halaman Registrasi', category: 'Autentikasi', href: 'pages/auth/register.html', icon: 'user-plus' },
-  { id: 'toggle-theme', title: 'Ganti Mode Gelap / Terang', category: 'Aksi', action: 'toggle-theme', icon: 'sun' },
-  { id: 'toggle-sidebar', title: 'Lipat / Buka Sidebar', category: 'Aksi', action: 'toggle-sidebar', icon: 'panel-left' }
+  { id: 'dash', title: 'Dashboard', category: 'Navigation', href: 'index.html', icon: 'layout-dashboard' },
+  { id: 'dt', title: 'Data Table', category: 'Navigation', href: 'pages/data-table.html', icon: 'table' },
+  { id: 'forms', title: 'Forms', category: 'Navigation', href: 'pages/forms.html', icon: 'file-text' },
+  { id: 'comp', title: 'Components (Styleguide)', category: 'Navigation', href: 'pages/components.html', icon: 'blocks' },
+  { id: 'sett', title: 'Settings', category: 'Navigation', href: 'pages/settings.html', icon: 'settings' },
+  { id: 'prof', title: 'My Profile', category: 'Navigation', href: 'pages/profile.html', icon: 'user' },
+  { id: 'blank', title: 'Starter / Blank Page', category: 'Navigation', href: 'pages/blank.html', icon: 'file' },
+  { id: 'login', title: 'Login Page', category: 'Authentication', href: 'pages/auth/login.html', icon: 'log-in' },
+  { id: 'reg', title: 'Registration Page', category: 'Authentication', href: 'pages/auth/register.html', icon: 'user-plus' },
+  { id: 'toggle-theme', title: 'Toggle Dark / Light Mode', category: 'Actions', action: 'toggle-theme', icon: 'sun' },
+  { id: 'toggle-sidebar', title: 'Collapse / Expand Sidebar', category: 'Actions', action: 'toggle-sidebar', icon: 'panel-left' }
 ];
 
 export function open() {
@@ -61,7 +61,7 @@ function createModalElement() {
           <svg class="xa-icon text-muted" aria-hidden="true">
             <use href="${prefix}assets/icons/sprite.svg#search"/>
           </svg>
-          <input type="text" class="xa-command__search-input" id="xaCommandInput" placeholder="Ketik perintah atau cari halaman..." autocomplete="off">
+          <input type="text" class="xa-command__search-input" id="xaCommandInput" placeholder="Type a command or search for a page..." autocomplete="off">
           <span class="xa-command__shortcut">ESC</span>
         </div>
         <div class="xa-command__list" id="xaCommandList">
@@ -81,7 +81,7 @@ function createModalElement() {
     );
 
     if (filtered.length === 0) {
-      list.innerHTML = `<div class="text-center py-4 text-muted small">Tidak ada hasil ditemukan</div>`;
+      list.innerHTML = `<div class="text-center py-4 text-muted small">No results found</div>`;
       return;
     }
 
