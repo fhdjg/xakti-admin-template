@@ -1,7 +1,7 @@
 # Xakti Admin Dashboard Template
 
 > **Template admin dashboard modern berbasis Bootstrap 5.3.x dengan nuansa desain minimalis shadcn/ui.**  
-> Murni HTML, CSS, dan Vanilla JavaScript (ES2020+) tanpa ketergantungan framework runtime (React, Vue, jQuery, Tailwind) dan tanpa build step wajib.
+> Murni HTML, CSS, dan Js tanpa ketergantungan framework runtime (React, Vue, jQuery, Tailwind).
 
 [English Version](README.md) | **Bahasa Indonesia**
 

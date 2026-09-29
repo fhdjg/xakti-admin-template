@@ -1,7 +1,7 @@
 # Xakti Admin Dashboard Template
 
 > **Modern admin dashboard template built on Bootstrap 5.3.x with a clean, minimalist shadcn/ui aesthetic.**  
-> Pure HTML, CSS, and Vanilla JavaScript (ES2020+) without runtime framework dependencies (React, Vue, jQuery, Tailwind) and with no required build step.
+> Pure HTML, CSS, and Js without runtime framework dependencies (React, Vue, jQuery, Tailwind).
 
 **English** | [Bahasa Indonesia](README.id.md)
 
