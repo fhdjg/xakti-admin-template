@@ -194,7 +194,40 @@ Pure HTML, CSS, and js without runtime framework dependencies (React, Vue, jQuer
       </div>
     </aside>
     <div class="xa-shell__body">
-      <header class="navbar xa-topbar"><div class="xa-topbar__left"><button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle aria-label="Open Sidebar"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg></button><button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle aria-label="Collapse Sidebar"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#panel-left"/></svg></button><nav aria-label="Breadcrumb" class="d-none d-sm-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Application</a></li><li class="breadcrumb-item active" aria-current="page">Plugin UI</li></ol></nav></div><div class="xa-topbar__right"><button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Toggle Theme"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg></button></div></header>
+      <header class="navbar xa-topbar"><div class="xa-topbar__left"><button class="btn btn-ghost btn-icon d-lg-none" type="button" data-xa-sidebar-toggle aria-label="Open Sidebar"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#menu"/></svg></button><button class="btn btn-ghost btn-icon d-none d-lg-inline-flex" type="button" data-xa-sidebar-toggle aria-label="Collapse Sidebar"><svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#panel-left"/></svg></button><nav aria-label="Breadcrumb" class="d-none d-sm-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Application</a></li><li class="breadcrumb-item active" aria-current="page">Plugin UI</li></ol></nav></div><div class="xa-topbar__right">
+          <button class="btn btn-ghost btn-icon" type="button" data-xa-theme-toggle aria-label="Toggle Theme">
+            <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#sun"/></svg>
+          </button>
+          <!-- Notifications Dropdown -->
+          <div class="dropdown">
+            <button class="btn btn-ghost btn-icon position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
+              <svg class="xa-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#bell"/></svg>
+              <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">New notifications</span>
+              </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end p-2 shadow-sm xa-notification-menu">
+              <div class="d-flex align-items-center justify-content-between p-2 border-bottom">
+                <span class="fw-semibold small">Notifications</span>
+                <span class="badge text-bg-primary">3 New</span>
+              </div>
+              <div class="py-1">
+                <a href="#" class="dropdown-item py-2">
+                  <div class="small fw-semibold">New order #2041</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">Payment of Rp 1,450,000 successful</div>
+                </a>
+                <a href="#" class="dropdown-item py-2">
+                  <div class="small fw-semibold">Monthly report ready</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">August data has been exported</div>
+                </a>
+              </div>
+              <div class="text-center pt-2 border-top">
+                <a href="#" class="btn btn-link btn-sm p-0" style="font-size: 0.75rem;">View all notifications</a>
+              </div>
+            </div>
+          </div>
+
+        </div></header>
       <main id="main" class="xa-content" tabindex="-1">
         <div class="xa-page-header"><div><h1 class="xa-page-title">Plugin UI</h1><p class="xa-page-description">Examples of popular plugin configurations and appearances integrated with Xakti Admin’s Bootstrap shadcn tokens.</p></div></div>
         <div class="alert alert-info d-flex gap-2 align-items-start" role="note"><svg class="xa-icon mt-1" aria-hidden="true"><use href="../assets/icons/sprite.svg#info"/></svg><div><strong>Installation note:</strong> this page shows the markup and visual result. Add plugin assets locally to your application; no CDN requests or jQuery are added to the core template.</div></div>

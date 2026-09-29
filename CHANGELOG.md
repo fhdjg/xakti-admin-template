@@ -20,6 +20,7 @@ Semua perubahan pada proyek **Xakti Admin** dicatat dalam berkas ini. Format men
 - **Settings Language**: Translated remaining Indonesian labels, helper text, tab names, profile fields, notification copy, password fields, and customizer text in `pages/settings.html`.
 
 ### Ditambahkan
+- **Notifications Dropdown Navbar**: Menambahkan dropdown notifikasi (`xa-notification-menu`) ke navbar pada seluruh halaman aplikasi (`documentation.html`, `project-structure.html`, serta seluruh halaman di dalam `pages/`) agar konsisten dengan `index.html`.
 - **SEO & Author Metadata**: Menambahkan meta tag `description`, `keywords`, dan `author` pada tag `<head>` di seluruh 16 file HTML template.
 - **README**: Menyesuaikan panduan menjalankan aplikasi, struktur folder, ukuran aset terbaru, serta tautan ke halaman dokumentasi dan struktur project.
 - **Halaman Struktur Project**: Menambahkan `project-structure.html` dengan peta folder aplikasi, ukuran file CSS/JavaScript, entry point, dan alur pemuatan aset; halaman ini juga tersedia dari sidebar.
