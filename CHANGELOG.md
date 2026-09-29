@@ -5,6 +5,7 @@ Semua perubahan pada proyek **Xakti Admin** dicatat dalam berkas ini. Format men
 ## [Unreleased]
 
 ### Changed
+- **Dashboard Interface Language**: Fully translated all remaining Indonesian labels, filter controls, action buttons, KPI abbreviations (`M`), traffic distribution cards, quick actions, activity feed entries, and Chart.js dataset labels in `frontend/index.html` and `frontend/assets/js/modules/charts.js` (and synchronized `app.bundle.js`) into English.
 - **README Localization & Default Language**: Translated `frontend/README.md` into English as the primary default repository guide, and created `frontend/README.id.md` to preserve the complete Indonesian documentation with cross-language navigation links.
 - **Project Structure Language**: Translated remaining Indonesian text in `project-structure.html` into English, including directory tree annotations, CSS/JS file size table headers and labels, entry point & asset flow guidance cards, and customizer controls.
 - **Pages Interface Language**: Fully translated all remaining Indonesian labels, form placeholders, table headers, error pages (403, 404, 500), profile statistics, project descriptions, session history, and customizer controls in `frontend/pages/` into English for a unified international template experience.

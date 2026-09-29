@@ -23,10 +23,10 @@ export function initRevenueChart(canvas) {
   const chart = new window.Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
         {
-          label: 'Pendapatan 2026',
+          label: 'Revenue 2026',
           data: [18500, 22400, 21800, 27500, 26000, 31200, 34500, 32800, 38900, 42100, 40500, 46800],
           borderColor: chart1,
           backgroundColor: 'transparent',
@@ -36,7 +36,7 @@ export function initRevenueChart(canvas) {
           pointHoverRadius: 5
         },
         {
-          label: 'Pengeluaran 2026',
+          label: 'Expenses 2026',
           data: [12000, 14500, 13800, 16200, 15500, 18400, 19200, 18700, 21500, 23000, 22100, 25400],
           borderColor: chart2,
           backgroundColor: 'transparent',
@@ -82,7 +82,7 @@ export function initRevenueChart(canvas) {
           ticks: {
             font: { family: 'Inter', size: 11 },
             color: textColor,
-            callback: (v) => 'Rp ' + (v / 1000) + 'jt'
+            callback: (v) => 'Rp ' + (v / 1000) + 'M'
           }
         }
       }
@@ -106,7 +106,7 @@ export function initTrafficChart(canvas) {
   const chart = new window.Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Organik', 'Langsung', 'Rujukan'],
+      labels: ['Organic', 'Direct', 'Referral'],
       datasets: [{
         data: [58, 27, 15],
         backgroundColor: [chart1, chart2, chart3],
