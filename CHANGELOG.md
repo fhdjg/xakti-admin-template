@@ -5,6 +5,7 @@ Semua perubahan pada proyek **Xakti Admin** dicatat dalam berkas ini. Format men
 ## [Unreleased]
 
 ### Changed
+- **Dark Mode Card Background**: Memperbarui token warna `--card` dan `--popover` pada tema gelap (`[data-bs-theme="dark"]`) dari `#09090b` menjadi `lab(7.78201% -.0000149012 0)` sesuai nilai standar palet gelap shadcn/ui untuk memberikan elevasi visual yang lebih baik antara card dan latar belakang halaman di [tokens.css](file:///Users/egov/Perjuangan/Web/xakti-admin-template/frontend/assets/css/tokens.css) dan [app.min.css](file:///Users/egov/Perjuangan/Web/xakti-admin-template/frontend/assets/css/app.min.css).
 - **Domain Email Dummy**: Mengubah seluruh akhiran domain alamat email dummy (seperti `admin@xakti.id`, `name@domain.com`, dan data dummy tabel/transaksi) menjadi `@example.com` di seluruh file HTML untuk menghindari penggunaan domain riil atau klaim hak cipta.
 - **Sidebar Brand Icon Sizing & Collapsed Alignment**: Removed `overflow: hidden;` from `.xa-sidebar__brand` to prevent the brand icon from being clipped when the sidebar is collapsed. Added explicit `max-width: 1.75rem;` and `max-height: 1.75rem;` constraints on `.xa-sidebar__brand-icon`, constrained nested images/icons (`max-width: 100%; max-height: 100%`), and improved horizontal padding and centering on `.xa-sidebar__header` and `.xa-sidebar__brand` in collapsed mode across [layout.css](file:///Users/egov/Perjuangan/Web/xakti-admin-template/frontend/assets/css/layout.css) and [app.min.css](file:///Users/egov/Perjuangan/Web/xakti-admin-template/frontend/assets/css/app.min.css).
 - **Sidebar Menu Grouping Consistency**: Grouped the `Project Structure` menu item into the `Help` section together with `Documentation` across all pages (`index.html`, `documentation.html`, and all sub-pages under `pages/`), aligning them with `project-structure.html` and resolving redundant section markup.
@@ -28,6 +29,7 @@ Semua perubahan pada proyek **Xakti Admin** dicatat dalam berkas ini. Format men
 - **Dokumentasi Template**: Menambahkan `documentation.html` yang menjelaskan cara menjalankan, arsitektur, theming, API JavaScript publik, dan panduan pengembangan, serta menautkannya dari sidebar.
 
 ### Diperbaiki
+- **Kontras Checkbox, Radio, & Switch pada Mode Gelap**: Memperbaiki kontras icon centang (checkmark), titik radio (radio dot), dan knob switch pada mode gelap (`[data-bs-theme="dark"]`). Sebelumnya warna background aktif (`--primary: #fafafa`) dan icon bawaan Bootstrap sama-sama putih (`#fff`) sehingga icon tidak terlihat. Ditambahkan SVG icon berwarna gelap (`#09090b`) saat tema default/zinc aktif, status `:indeterminate`, serta border yang lebih tegas (`#3f3f46`) untuk input yang belum dicentang di [theme.css](file:///Users/egov/Perjuangan/Web/xakti-admin-template/frontend/assets/css/theme.css) dan disinkronkan ke [app.min.css](file:///Users/egov/Perjuangan/Web/xakti-admin-template/frontend/assets/css/app.min.css).
 - **Link Panduan Footer**: Mengarahkan link Panduan pada footer seluruh halaman ke `documentation.html`.
 - **Posisi Daftar Isi Dokumentasi**: Menambahkan offset sticky agar daftar isi tetap berada di bawah navbar saat halaman digulir.
 
