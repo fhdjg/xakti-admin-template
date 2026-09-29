@@ -339,24 +339,21 @@
 
         <section class="card mb-4">
           <div class="card-body">
-            <pre class="bg-body-tertiary border rounded p-3 mb-0"><code>xakti-admin-template/
-├── frontend/                         # Runnable static application
-│   ├── index.html                    # Dashboard entrypoint
-│   ├── documentation.html            # Usage documentation
-│   ├── project-structure.html        # Project structure and asset size page
-│   ├── pages/                        # Application page templates
-│   │   ├── auth/                     # Login, register, forgot password
-│   │   └── errors/                   # Error pages 403, 404, 500
-│   ├── assets/
-│   │   ├── css/                     # Tokens, theme, layout, components, plugins
-│   │   ├── js/                      # Entry module, modules, and utilities
-│   │   ├── icons/                   # Local Lucide SVG sprite
-│   │   ├── fonts/                   # Local Inter font
-│   │   └── vendor/                  # Local Bootstrap and Chart.js
-│   ├── CHANGELOG.md
-│   └── README.md
-├── docs/                            # PRD, rules, and development documentation
-└── AGENTS.md                        # Instructions for coding agents</code></pre>
+            <pre class="bg-body-tertiary border rounded p-3 mb-0"><code>xakti-admin-template/                      
+   ├── index.html                    # Dashboard entrypoint
+   ├── documentation.html            # Usage documentation
+   ├── project-structure.html        # Project structure and asset size page
+   ├── pages/                        # Application page templates
+   │   ├── auth/                     # Login, register, forgot password
+   │   └── errors/                   # Error pages 403, 404, 500
+   ├── assets/
+   │   ├── css/                     # Tokens, theme, layout, components, plugins
+   │   ├── js/                      # Entry module, modules, and utilities
+   │   ├── icons/                   # Local Lucide SVG sprite
+   │   ├── fonts/                   # Local Inter font
+   │   └── vendor/                  # Local Bootstrap and Chart.js
+   ├── CHANGELOG.md
+   └── README.md</code></pre>
           </div>
         </section>
 
@@ -448,18 +445,21 @@
         <section class="card">
           <div class="card-header">
             <h2 class="h5 mb-1">Entry Points and Asset Flow</h2>
-            <p class="text-body-secondary small mb-0">Use the appropriate files depending on how the application is served.</p>
+            <p class="text-body-secondary small mb-0">Use the appropriate files depending on how the application is
+              served.</p>
           </div>
           <div class="card-body">
             <div class="row g-3">
               <div class="col-12 col-md-4">
                 <h3 class="h6">Local HTTP Server</h3>
-                <p class="small mb-0"><code>index.html</code> loads Bootstrap, <code>app.min.css</code>, then the Bootstrap
+                <p class="small mb-0"><code>index.html</code> loads Bootstrap, <code>app.min.css</code>, then the
+                  Bootstrap
                   bundle and <code>app.js</code> as an ES Module.</p>
               </div>
               <div class="col-12 col-md-4">
                 <h3 class="h6">Direct File Access</h3>
-                <p class="small mb-0">The browser uses <code>app.bundle.js</code> because ES Modules have security restrictions
+                <p class="small mb-0">The browser uses <code>app.bundle.js</code> because ES Modules have security
+                  restrictions
                   under the <code>file://</code> protocol.</p>
               </div>
               <div class="col-12 col-md-4">
@@ -574,7 +574,8 @@
             class="btn btn-outline-secondary btn-sm" data-xa-radius-value="1">1.0</button></div>
       </div>
       <div class="xa-customizer__section d-flex gap-2">
-        <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" data-xa-reset-customizer>Reset to Default</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" data-xa-reset-customizer>Reset to
+          Default</button>
         <button type="button" class="btn btn-primary btn-sm flex-fill" data-xa-export-theme>Copy JSON</button>
       </div>
     </div>
