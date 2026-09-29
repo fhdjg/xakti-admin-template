@@ -5,6 +5,7 @@ Semua perubahan pada proyek **Xakti Admin** dicatat dalam berkas ini. Format men
 ## [Unreleased]
 
 ### Changed
+- **Sidebar Menu Grouping Consistency**: Grouped the `Project Structure` menu item into the `Help` section together with `Documentation` across all pages (`index.html`, `documentation.html`, and all sub-pages under `pages/`), aligning them with `project-structure.html` and resolving redundant section markup.
 - **Dashboard Interface Language**: Fully translated all remaining Indonesian labels, filter controls, action buttons, KPI abbreviations (`M`), traffic distribution cards, quick actions, activity feed entries, and Chart.js dataset labels in `frontend/index.html` and `frontend/assets/js/modules/charts.js` (and synchronized `app.bundle.js`) into English.
 - **README Localization & Default Language**: Translated `frontend/README.md` into English as the primary default repository guide, and created `frontend/README.id.md` to preserve the complete Indonesian documentation with cross-language navigation links.
 - **Project Structure Language**: Translated remaining Indonesian text in `project-structure.html` into English, including directory tree annotations, CSS/JS file size table headers and labels, entry point & asset flow guidance cards, and customizer controls.
