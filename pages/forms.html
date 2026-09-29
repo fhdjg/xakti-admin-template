@@ -471,6 +471,115 @@ Pure HTML, CSS, and js without runtime framework dependencies (React, Vue, jQuer
             </div>
           </div>
         </div>
+
+        <!-- Row: Floating Labels -->
+        <div class="row g-4 mt-1">
+          <!-- Column 1: Basic Floating Labels & File Input -->
+          <div class="col-12 col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h2 class="card-title h6 mb-0">Floating Labels</h2>
+                <p class="card-subtitle small text-muted">Labels that float over form fields, selects, and file inputs</p>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingEmailInput" placeholder="name@example.com" value="user@example.com">
+                    <label for="floatingEmailInput">Email Address</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPasswordInput" placeholder="Password" value="secret123">
+                    <label for="floatingPasswordInput">Password</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <select class="form-select" id="floatingSelectRole" aria-label="Select user role">
+                      <option selected>Choose access level...</option>
+                      <option value="1">Owner / Superadmin</option>
+                      <option value="2">Project Manager</option>
+                      <option value="3">Staff Contributor</option>
+                    </select>
+                    <label for="floatingSelectRole">Assigned User Role</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="file" class="form-control" id="floatingFileInput">
+                    <label for="floatingFileInput">Upload Supporting File</label>
+                    <div class="form-text mt-1">Floating label with file input (PDF, PNG, JPG max 10 MB).</div>
+                  </div>
+
+                  <div class="form-floating mb-0">
+                    <textarea class="form-control" placeholder="Leave remarks or notes here" id="floatingTextarea" style="height: 100px;"></textarea>
+                    <label for="floatingTextarea">Notes &amp; Descriptions</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Floating Labels in Grid & Validation -->
+          <div class="col-12 col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h2 class="card-title h6 mb-0">Floating Labels in Grid &amp; Validation</h2>
+                <p class="card-subtitle small text-muted">Responsive columns and valid / invalid state indicators</p>
+              </div>
+              <div class="card-body">
+                <form novalidate>
+                  <div class="row g-2 mb-3">
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control is-valid" id="floatingValidName" placeholder="First Name" value="Jane">
+                        <label for="floatingValidName">First Name</label>
+                        <div class="valid-feedback small">Verified!</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control is-invalid" id="floatingInvalidUser" placeholder="Username" value="invalid*id">
+                        <label for="floatingInvalidUser">Username</label>
+                        <div class="invalid-feedback small">Special characters not allowed.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row g-2 mb-3">
+                    <div class="col-md-8">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingCity" placeholder="City" value="Jakarta">
+                        <label for="floatingCity">City</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingZip" placeholder="Zip" value="10210">
+                        <label for="floatingZip">Zip Code</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="file" class="form-control is-valid" id="floatingFileValid">
+                    <label for="floatingFileValid">Verified Identity Document</label>
+                    <div class="valid-feedback small">Document verified and ready for upload.</div>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="file" class="form-control is-invalid" id="floatingFileInvalid">
+                    <label for="floatingFileInvalid">Tax Document (Rejected)</label>
+                    <div class="invalid-feedback small">File exceeds maximum size or format unsupported.</div>
+                  </div>
+
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="reset" class="btn btn-outline-secondary btn-sm">Reset</button>
+                    <button type="button" class="btn btn-primary btn-sm">Submit Floating Form</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer class="mt-auto py-3 px-4 border-top text-center text-muted small">

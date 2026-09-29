@@ -241,6 +241,40 @@ h1, h2, h3, h4, h5, h6,
   cursor: not-allowed;
 }
 
+/* Floating Labels */
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext,
+.form-floating > .form-select {
+  min-height: 3.5rem;
+  height: calc(3.5rem + 2px);
+  line-height: 1.25;
+}
+
+.form-floating > label {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  font-weight: 450;
+  padding: 1rem 0.75rem;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  color: var(--muted-foreground);
+  opacity: 0.85;
+}
+
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-select ~ label::after {
+  background-color: var(--card);
+}
+
+.form-floating > .form-control[type="file"] {
+  padding-top: 1.625rem;
+  padding-bottom: 0.5rem;
+}
+
 .form-check-input {
   border: 1px solid var(--input);
   border-radius: var(--radius-sm);
